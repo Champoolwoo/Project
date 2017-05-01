@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<title>Smart Farm</title>
+	<link rel="stylesheet" href="../css/style.css">
+	<!-- framework Angular -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="../app.js"></script>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	 <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+	
+	<!-- Compiled and minified CSS -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css"> -->
+  <!-- Compiled and minified JavaScript -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script> -->
+         
+</head>
+<script>
+	
+</script>
+<body ng-controller="TodoListController">
+<!-- body////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+<!-- navbar -->
+	<nav class="navbar navbar-default hidden-phone">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="#">Smart Farm Vegetable</a>
+	    </div>
+	    <ul class="nav navbar-nav">
+	      <li><a href="../index.html">Home</a></li>
+	      <li><a href="googleSheets.html">Google Sheets</a></li>
+	      <li class="active"><a href="#">Status</a></li>
+	      <li><a href="#">Page 3</a></li>
+	    </ul>
+	  </div>
+	</nav>
+<!-- navbar -->
+
+		<input type="date" ng-model="box1" >
+
+		<p>{{day1}} Day {{hour1}} Hour</p>
+
+		<input type="date" ng-model="box2" >
+		<p>{{day2}} Day {{hour2}} Hour</p>
+
+		<input type="date" ng-model="box3" >
+		<p>{{day3}} Day {{hour3}} Hour</p>
+
+		<input type="date" ng-model="box4" >
+		<p>{{day4}} Day {{hour4}} Hour</p>
+
+		<input type="date" ng-model="box5" >
+		<p>{{day5}} Day {{hour5}} Hour</p>
+
+		<input type="date" ng-model="box6" >
+		<p>{{day6}} Day {{hour6}} Hour</p>
+
+		<!-- <button ng-click="">OK</button> -->
+
+	<!-- <div id="timer">
+	  <span id="days"></span>days
+	  <span id="hours"></span>hours
+	  <span id="minutes"></span>minutes
+	  <span id="seconds"></span>seconds
+	</div> -->
+
+
+	<!-- <div class="container">
+		<div class="cat action">
+		   <label>
+		      <input type="checkbox" value="1" ng-click="day()"><span style="cursor: pointer;" id="days"> Day</span>
+		   </label>
+		</div>
+
+		<div class="cat comedy">
+		   <label>
+		      <input type="checkbox" value="1" ng-click="day()"><span style="cursor: pointer;">Day</span>
+		   </label>
+		</div>
+
+		<div class="cat crime">
+		   <label>
+		      <input type="checkbox" value="1"><span style="cursor: pointer;">Crime</span>
+		   </label>
+		</div>
+
+		<div class="cat history">
+		   <label>
+		      <input type="checkbox" value="1"><span style="cursor: pointer;">History</span>
+		   </label>
+		</div>
+
+		<div class="cat reality">
+		   <label>
+		      <input type="checkbox" value="1"><span style="cursor: pointer;">Reality</span>
+		   </label>
+		</div>
+
+		<div class="cat news">
+		   <label>
+		      <input type="checkbox" value="1"><span style="cursor: pointer;">News</span>
+		   </label>
+		</div>
+
+
+		  <div class="cat scifi">
+		   <label>
+		      <input type="checkbox" value="1"><span style="cursor: pointer;">Scifi</span>
+		   </label>
+		</div>
+
+		  <div class="cat sports">
+		   <label>
+		      <input type="checkbox" value="1"><span style="cursor: pointer;">Sports</span>
+		   </label>
+		</div>
+	</div> -->
+
+
+<!-- body////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+<input type="date" ng-model="test555">
+
+{{test555}}
+<div ng-bind="test555">
+
+</body>
+</html>
