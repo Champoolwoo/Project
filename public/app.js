@@ -86,12 +86,12 @@ angular.module('app', [])
 			$scope.sec6 = ss6 - mm6  * 60
 
 			$scope.$apply()
-			console.log($scope.day1+" Day "+$scope.hour1+" Hours")
-			console.log($scope.day2+" Day "+$scope.hour2+" Hours")
-			console.log($scope.day3+" Day "+$scope.hour3+" Hours")
-			console.log($scope.day4+" Day "+$scope.hour4+" Hours")
-			console.log($scope.day5+" Day "+$scope.hour5+" Hours")
-			console.log($scope.day6+" Day "+$scope.hour6+" Hours")
+			// console.log($scope.day1+" Day "+$scope.hour1+" Hours")
+			// console.log($scope.day2+" Day "+$scope.hour2+" Hours")
+			// console.log($scope.day3+" Day "+$scope.hour3+" Hours")
+			// console.log($scope.day4+" Day "+$scope.hour4+" Hours")
+			// console.log($scope.day5+" Day "+$scope.hour5+" Hours")
+			// console.log($scope.day6+" Day "+$scope.hour6+" Hours")
 
 		 }, 1000)//setInterval
 
@@ -117,6 +117,14 @@ angular.module('app', [])
 			$http.get('/pumpOff').then(function (response){
 				console.log(response)
 			})
+		}
+
+		$scope.takeCam = function(){
+			// $http.get('/takeCam').then(function (response){
+			// 	console.log(response)
+			// })
+
+			console.log("Take Photo")
 		}
 
   // 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -205,5 +213,6 @@ angular.module('app', [])
 		      $scope.items = res.data[res.data.length - 1]
 		      $scope.sheets = res.data
     		})
+
 })
 

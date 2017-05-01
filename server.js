@@ -6,6 +6,7 @@ var Schema = mongoose.Schema
 var thingSchema = new Schema({}, {strict: false})
 var DateEat = mongoose.model('SmartFarm', thingSchema)
 var app = express()
+
 mongoose.connect('mongodb://farm:26032538@ds127531.mlab.com:27531/farm')
 app.use(bodyParser.json())
 app.use(express.static('public'))
@@ -33,6 +34,13 @@ app.get('/pumpOn', function(req, res, next){
 
 app.get('/pumpOff', function(req, res, next){
 	PyhonShell.run('pumpOff.py', function(err){
+		if(err){res.send(err)}
+			else res.send({message: 'done'})
+	})
+})
+
+app.get('/takeCam', function(req, res, next){
+	PyhonShell.run('takeCam.py', function(err){
 		if(err){res.send(err)}
 			else res.send({message: 'done'})
 	})
