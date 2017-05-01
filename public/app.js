@@ -95,6 +95,40 @@ angular.module('app', [])
 
 		 }, 1000)//setInterval
 
+		$scope.ledOn = function(){
+			$http.get('/ledOn').success(function (response){
+				console.log(response)
+			}).error(funcion (data, status, headers, config){
+				console.log('error')
+			})
+		}
+
+		$scope.ledOff = function(){
+			$http.get('/ledOff').success(function (response){
+				console.log(response)
+			}).error(funcion (data, status, headers, config){
+				console.log('error')
+			})
+		}
+
+		$scope.pumpOn = function(){
+			$http.get('/pumpOn').success(function (response){
+				console.log(response)
+			}).error(funcion (data, status, headers, config){
+				console.log('error')
+			})
+		}
+
+		$scope.pumpOff = function(){
+			$http.get('/pumpOff').success(function (response){
+				console.log(response)
+			}).error(funcion (data, status, headers, config){
+				console.log('error')
+			})
+		}
+
+
+
 
 		// var a = new Date(box1);
 		// var b = a.getTime()
