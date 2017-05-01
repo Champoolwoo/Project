@@ -162,8 +162,8 @@ var mqttSend = function(topic, msg) {
 			  <button id="led-off" disabled>&nbsp;ON LED&nbsp;</button>
 			<h2>Status LED : <span id="stled"></span></h2> -->
 
-			 <button id="led-on" class="btn btn-primary btn-lg active" ng-click="ledOn()">Off</button>
-			 <button id="led-off" class="btn btn-primary btn-lg active" ng-click="ledOff()" disabled>On</button>
+			 <button id="led-on" class="btn btn-primary btn-lg active" ng-click="ledOff()" disabled>Off</button>
+			 <button id="led-off" class="btn btn-primary btn-lg active" ng-click="ledOn()">On</button>
 
 				<!-- <div class="holder">
 					<input type="checkbox" value="true" id="check" name="check" ng-click="controlSwitch()" class="check-ios" ng-model="conLED"/>
@@ -179,8 +179,8 @@ var mqttSend = function(topic, msg) {
 			<div class="col-md-5">
 			<h3>Control Water Pump</h3>
 
-				<button id="pump-on" class="btn btn-primary btn-lg active" ng-click="pumpOn()">Off</button>
-			 	<button id="pump-off" class="btn btn-primary btn-lg active" ng-click="pumpOff()" disabled>On</button>
+				<button id="pump-on" class="btn btn-primary btn-lg active" ng-click="pumpOff()" disabled>Off</button>
+			 	<button id="pump-off" class="btn btn-primary btn-lg active" ng-click="pumpOn()">On</button>
 				<!-- <div class="holder">
 					<input type="checkbox" value="true" id="check2" name="check2" class="check-ios2" ng-click="controlSwitch()" ng-model="conPump"/>
 					<label for="check2"></label>
