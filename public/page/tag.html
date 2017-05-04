@@ -49,18 +49,91 @@
 	    </ul>
 	  </div>
 	</nav>
-	
-
 
 	<div style="background-color:  yellow; ">
-		<button ng-click="tree(1)" class="btn btn-primary btn-lg" id="button">{{   (hole[0].status === false)?  'Add' : 'Reset'    }}</button>
-		<button ng-click="tree(2)" class="btn btn-primary btn-lg" id="button">{{   (hole[1].status === false)?  'Add' : 'Reset'    }}</button>
-		<button ng-click="tree(3)" class="btn btn-primary btn-lg" id="button">{{   (hole[2].status === false)?  'Add' : 'Reset'           }}</button>
+		<!-- <button ng-click="tree(1)" class="btn btn-primary btn-xs" id="button" ng-iff="calday1 > 0">{{ (totalHole[0].status === false)?  'Add' : 'Reset'}} 1</button>
+		<button ng-click="tree(1)" class="btn btn-warning btn-xs" id="button" ng-if="calday1 <= 0">Reset 1</button> -->
+
+		<button ng-click="tree(1)" class="btn btn-primary btn-xs" id="button" ng-if="calday1 < 0">Add</button>
+		<button ng-click="tree(1)" class="btn btn-success btn-xs" id="button" ng-if="calday1 >= 0 && calday1 <= 10">{{calday1}} Day <br>Reset</button>
+		<button ng-click="tree(1)" class="btn btn-warning btn-xs" id="button" ng-if="calday1 >= 11 && calday1 <= 19">{{calday1}} Day <br>Reset</button>
+		<button ng-click="tree(1)" class="btn btn-danger btn-xs" id="button" ng-if="calday1 >= 20">{{calday1}} Day <br>Reset</button>
+
+		<!-- <button ng-click="tree(2)" class="btn btn-primary btn-xs" id="button">{{   (totalHole[1].status === false)?  'Add' : 'Reset'    }} 2</button>
+		<button ng-click="tree(3)" class="btn btn-primary btn-xs" id="button">{{   (totalHole[2].status === false)?  'Add' : 'Reset'    }} 3</button>
+		<button ng-click="tree(4)" class="btn btn-primary btn-xs" id="button">{{   (totalHole[3].status === false)?  'Add' : 'Reset'    }} 4</button>
+		<button ng-click="tree(5)" class="btn btn-primary btn-xs" id="button">{{   (totalHole[4].status === false)?  'Add' : 'Reset'    }} 5</button>
+		<button ng-click="tree(6)" class="btn btn-primary btn-xs" id="button">{{   (totalHole[5].status === false)?  'Add' : 'Reset'    }} 6</button>
+		<br>
+		<button ng-click="tree(7)" class="btn btn-primary btn-xs" id="button">{{   (totalHole[6].status === false)?  'Add' : 'Reset'    }} 7</button>
+		<button ng-click="tree(8)" class="btn btn-primary btn-xs" id="button">{{   (totalHole[7].status === false)?  'Add' : 'Reset'    }} 8</button>
+		<button ng-click="tree(9)" class="btn btn-primary btn-xs" id="button">{{   (totalHole[8].status === false)?  'Add' : 'Reset'    }} 9</button>
+		<button ng-click="tree(10)" class="btn btn-primary btn-xs" id="button">{{   (totalHole[9].status === false)?  'Add' : 'Reset'    }} 10</button>
+		<button ng-click="tree(11)" class="btn btn-primary btn-xs" id="button">{{   (totalHole[10].status === false)?  'Add' : 'Reset'    }} 11</button>
+		<button ng-click="tree(12)" class="btn btn-primary btn-xs" id="button">{{   (totalHole[11].status === false)?  'Add' : 'Reset'    }} 12</button>
+		<br>
+		<button ng-click="tree(13)" class="btn btn-primary btn-xs" id="button">{{   (totalHole[12].status === false)?  'Add' : 'Reset'    }} 13</button>
+		<button ng-click="tree(14)" class="btn btn-primary btn-xs" id="button">{{   (totalHole[13].status === false)?  'Add' : 'Reset'    }} 14</button>
+		<button ng-click="tree(15)" class="btn btn-primary btn-xs" id="button">{{   (totalHole[14].status === false)?  'Add' : 'Reset'    }} 15</button>
+		<button ng-click="tree(16)" class="btn btn-primary btn-xs" id="button">{{   (totalHole[15].status === false)?  'Add' : 'Reset'    }} 16</button>
+		<button ng-click="tree(17)" class="btn btn-primary btn-xs" id="button">{{   (totalHole[16].status === false)?  'Add' : 'Reset'    }} 17</button>
+		<button ng-click="tree(18)" class="btn btn-primary btn-xs" id="button">{{   (totalHole[17].status === false)?  'Add' : 'Reset'    }} 18</button>
+		<br>
+		<button ng-click="tree(19)" class="btn btn-primary btn-xs" id="button">{{   (totalHole[18].status === false)?  'Add' : 'Reset'    }} 19</button>
+		<button ng-click="tree(20)" class="btn btn-primary btn-xs" id="button">{{   (totalHole[19].status === false)?  'Add' : 'Reset'    }} 20</button>
+		<button ng-click="tree(21)" class="btn btn-primary btn-xs" id="button">{{   (totalHole[20].status === false)?  'Add' : 'Reset'    }} 21</button>
+		<button ng-click="tree(22)" class="btn btn-primary btn-xs" id="button">{{   (totalHole[21].status === false)?  'Add' : 'Reset'    }} 22</button>
+		<button ng-click="tree(23)" class="btn btn-primary btn-xs" id="button">{{   (totalHole[22].status === false)?  'Add' : 'Reset'    }} 23</button>
+		<button ng-click="tree(24)" class="btn btn-primary btn-xs" id="button">{{   (totalHole[23].status === false)?  'Add' : 'Reset'    }} 24</button>
+		<br>
+		<button ng-click="tree(25)" class="btn btn-primary btn-xs" id="button">{{   (totalHole[24].status === false)?  'Add' : 'Reset'    }} 25</button>
+		<button ng-click="tree(26)" class="btn btn-primary btn-xs" id="button">{{   (totalHole[25].status === false)?  'Add' : 'Reset'    }} 26</button>
+		<button ng-click="tree(27)" class="btn btn-primary btn-xs" id="button">{{   (totalHole[26].status === false)?  'Add' : 'Reset'    }} 27</button>
+		<button ng-click="tree(28)" class="btn btn-primary btn-xs" id="button">{{   (totalHole[27].status === false)?  'Add' : 'Reset'    }} 28</button>
+		<button ng-click="tree(29)" class="btn btn-primary btn-xs" id="button">{{   (totalHole[28].status === false)?  'Add' : 'Reset'    }} 29</button>
+		<button ng-click="tree(30)" class="btn btn-primary btn-xs" id="button">{{   (totalHole[29].status === false)?  'Add' : 'Reset'    }} 30</button>
+		<br>
+		<button ng-click="tree(31)" class="btn btn-primary btn-xs" id="button">{{   (totalHole[30].status === false)?  'Add' : 'Reset'    }} 31</button>
+		<button ng-click="tree(32)" class="btn btn-primary btn-xs" id="button">{{   (totalHole[31].status === false)?  'Add' : 'Reset'    }} 32</button>
+		<button ng-click="tree(33)" class="btn btn-primary btn-xs" id="button">{{   (totalHole[32].status === false)?  'Add' : 'Reset'    }} 33</button>
+		<button ng-click="tree(34)" class="btn btn-primary btn-xs" id="button">{{   (totalHole[33].status === false)?  'Add' : 'Reset'    }} 34</button>
+		<button ng-click="tree(35)" class="btn btn-primary btn-xs" id="button">{{   (totalHole[34].status === false)?  'Add' : 'Reset'    }} 35</button>
+		<button ng-click="tree(36)" class="btn btn-primary btn-xs" id="button">{{   (totalHole[35].status === false)?  'Add' : 'Reset'    }} 36</button> -->
 	</div>
 
-	<div ng-repeat=" s in hole">
+	<!-- <div ng-repeat=" s in hole">
 		{{s.hole}} // {{s.end}} // {{s.status}}
-	</div>
+	</div> -->
+
+	{{calday1}},{{calday2}}<br>
+	{{calday3}},{{calday4}}<br>
+	{{calday5}},{{calday6}}<br>
+
+	<div class="dropdown">
+	    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Tutorials
+	    	<span class="caret"></span>
+	    </button>
+
+	    <ul class="dropdown-menu">
+	      <li class="dropdown-header">Floor 1 Left</li>
+	      		<li><a href="#">Hole 1</a></li>
+	       	<li><a href="#">Hole 2</a></li>
+	       	<li><a href="#">Hole 3</a></li>
+	       	<li><a href="#">Hole 4</a></li>
+	       	<li><a href="#">Hole 5</a></li>
+	       	<li><a href="#">Hole 6</a></li>
+	      <li class="divider"></li>
+	      <li class="dropdown-header">Floor 1 Right</li>
+	      		<li><a href="#">Hole 1</a></li>
+	       	<li><a href="#">Hole 2</a></li>
+	       	<li><a href="#">Hole 3</a></li>
+	       	<li><a href="#">Hole 4</a></li>
+	       	<li><a href="#">Hole 5</a></li>
+	       	<li><a href="#">Hole 6</a></li>
+	      <li class="divider"></li>
+	    </ul>
+	  </div>
+
 
 
 
@@ -87,84 +160,7 @@
 <!-- navbar -->
 	</div>
 
-		<!-- <input type="date" ng-model="box1" >
-		<p>{{day1}} Day {{hour1}} Hour</p> -->
 
-		<!-- <input type="date" ng-model="box2" >
-		<p>{{day2}} Day {{hour2}} Hour</p>
-
-		<input type="date" ng-model="box3" >
-		<p>{{day3}} Day {{hour3}} Hour</p>
-
-		<input type="date" ng-model="box4" >
-		<p>{{day4}} Day {{hour4}} Hour</p>
-
-		<input type="date" ng-model="box5" >
-		<p>{{day5}} Day {{hour5}} Hour</p>
-
-		<input type="date" ng-model="box6" >
-		<p>{{day6}} Day {{hour6}} Hour</p> -->
-
-		<!-- <button ng-click="">OK</button> -->
-
-	<!-- <div id="timer">
-	  <span id="days"></span>days
-	  <span id="hours"></span>hours
-	  <span id="minutes"></span>minutes
-	  <span id="seconds"></span>seconds
-	</div> -->
-
-
-	<!-- <div class="container">
-		<div class="cat action">
-		   <label>
-		      <input type="checkbox" value="1" ng-click="day()"><span style="cursor: pointer;" id="days"> Day</span>
-		   </label>
-		</div>
-
-		<div class="cat comedy">
-		   <label>
-		      <input type="checkbox" value="1" ng-click="day()"><span style="cursor: pointer;">Day</span>
-		   </label>
-		</div>
-
-		<div class="cat crime">
-		   <label>
-		      <input type="checkbox" value="1"><span style="cursor: pointer;">Crime</span>
-		   </label>
-		</div>
-
-		<div class="cat history">
-		   <label>
-		      <input type="checkbox" value="1"><span style="cursor: pointer;">History</span>
-		   </label>
-		</div>
-
-		<div class="cat reality">
-		   <label>
-		      <input type="checkbox" value="1"><span style="cursor: pointer;">Reality</span>
-		   </label>
-		</div>
-
-		<div class="cat news">
-		   <label>
-		      <input type="checkbox" value="1"><span style="cursor: pointer;">News</span>
-		   </label>
-		</div>
-
-
-		  <div class="cat scifi">
-		   <label>
-		      <input type="checkbox" value="1"><span style="cursor: pointer;">Scifi</span>
-		   </label>
-		</div>
-
-		  <div class="cat sports">
-		   <label>
-		      <input type="checkbox" value="1"><span style="cursor: pointer;">Sports</span>
-		   </label>
-		</div>
-	</div> -->
 
 
 <!-- body////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
