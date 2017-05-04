@@ -18,8 +18,10 @@
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-		<!-- Moment time -->
+	<!-- Moment time -->
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+
+	
 
 	<!-- Compiled and minified CSS -->
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css"> -->
@@ -47,13 +49,48 @@
 	    </ul>
 	  </div>
 	</nav>
+	
+
+
+	<div style="background-color:  yellow; ">
+		<button ng-click="tree(1)" class="btn btn-primary btn-lg" id="button">{{   (hole[0].status === false)?  'Add' : 'Reset'    }}</button>
+		<button ng-click="tree(2)" class="btn btn-primary btn-lg" id="button">{{   (hole[1].status === false)?  'Add' : 'Reset'    }}</button>
+		<button ng-click="tree(3)" class="btn btn-primary btn-lg" id="button">{{   (hole[2].status === false)?  'Add' : 'Reset'           }}</button>
+	</div>
+
+	<div ng-repeat=" s in hole">
+		{{s.hole}} // {{s.end}} // {{s.status}}
+	</div>
+
+
+
+	<div class="container" ng-repeat="veta in dateEndDate">
+	<!-- <button ng-click="eat()" class="btn btn-default btn-lg">{{sum1}}</button> -->
+
+		<!-- <button ng-click="eat()" class="btn btn-primary btn-lg" id="button" ng-if="countDate(veta.end) > 0">{{countDate(veta.end)}} Day</button>
+		<button ng-click="reset(veta._id)" class="btn btn-warning btn-lg" id="button" ng-if="countDate(veta.end) <= 0">Reset</button> -->
+
+
+<!-- 		<button ng-click="eat()" class="btn btn-primary btn-lg" id="button">{{countDate()}} Day</button> <br>
+		<button ng-click="eat()" class="btn btn-primary btn-lg" id="button">{{countDate()}} Day</button> <br>
+		<button ng-click="eat()" class="btn btn-primary btn-lg" id="button">{{countDate()}} Day</button> <br>
+		<button ng-click="eat()" class="btn btn-primary btn-lg" id="button">{{countDate()}} Day</button> <br>
+		<button ng-click="eat()" class="btn btn-primary btn-lg" id="button">{{countDate()}} Day</button> <br>
+ -->
+		<!-- <div ng-repeat="show in sumday1">
+			{{show.end1}} -- {{show.sumday1}} <br> <hr>
+		</div>
+
+		<div ng-repeat="item in dateEndDate">
+			<h1>{{item.end}}</h1>
+		</div> -->
 <!-- navbar -->
+	</div>
 
-		<input type="date" ng-model="box1" >
+		<!-- <input type="date" ng-model="box1" >
+		<p>{{day1}} Day {{hour1}} Hour</p> -->
 
-		<p>{{day1}} Day {{hour1}} Hour</p>
-
-		<input type="date" ng-model="box2" >
+		<!-- <input type="date" ng-model="box2" >
 		<p>{{day2}} Day {{hour2}} Hour</p>
 
 		<input type="date" ng-model="box3" >
@@ -66,7 +103,7 @@
 		<p>{{day5}} Day {{hour5}} Hour</p>
 
 		<input type="date" ng-model="box6" >
-		<p>{{day6}} Day {{hour6}} Hour</p>
+		<p>{{day6}} Day {{hour6}} Hour</p> -->
 
 		<!-- <button ng-click="">OK</button> -->
 
@@ -132,7 +169,7 @@
 
 <!-- body////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
-<input type="date" ng-model="test555">
+<!-- <input type="date" ng-model="test555"> -->
 
 
 

@@ -1,5 +1,13 @@
+
+
+
+#button{
+    width: 90px;
+    height: 50px;
+}
+
 /*-------------------------------------------------------Switch*/
-.holder{
+/*.holder{
   width:56px;
   margin:20px auto;
   position:relative;
@@ -93,10 +101,10 @@
 
 .check-ios:checked + label {
   left: 25px;
-}
+}*/
 
 /*-------------------------------------------------------Switch*/
-.holder2{
+/*.holder2{
   width:56px;
   margin:20px auto;
   position:relative;
@@ -190,10 +198,10 @@
 
 .check-ios2:checked + label {
   left: 25px;
-}
+}*/
 
 /*-------------------------------------------------------tag*/
-div label input {margin-right: 100px;}
+/*div label input {margin-right: 100px;}
 
 .cat{
   margin: 4px;
@@ -235,6 +243,4 @@ div label input {margin-right: 100px;}
 .reality input:checked + span{background-color: #F3A4CF;}
 .news input:checked + span{background-color: #8C1B1B;}
 .scifi input:checked + span{background-color: #AC9BD1;}
-.sports input:checked + span{background-color: #214A09;}
-
-
+.sports input:checked + span{background-color: #214A09;}*/
