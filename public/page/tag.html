@@ -57,7 +57,32 @@
 		<button ng-click="tree(1)" class="btn btn-primary btn-xs" id="button" ng-if="calday1 < 0">Add</button>
 		<button ng-click="tree(1)" class="btn btn-success btn-xs" id="button" ng-if="calday1 >= 0 && calday1 <= 10">{{calday1}} Day <br>Reset</button>
 		<button ng-click="tree(1)" class="btn btn-warning btn-xs" id="button" ng-if="calday1 >= 11 && calday1 <= 19">{{calday1}} Day <br>Reset</button>
-		<button ng-click="tree(1)" class="btn btn-danger btn-xs" id="button" ng-if="calday1 >= 20">{{calday1}} Day <br>Reset</button>
+		<button ng-click="tree(1)" class="btn btn-danger btn-xs" id="button" ng-if="calday1 >= 20">{{calday1}} Days <br>Left</button>
+
+		<button ng-click="tree(2)" class="btn btn-primary btn-xs" id="button" ng-if="calday2 < 0">Add</button>
+		<button ng-click="tree(2)" class="btn btn-success btn-xs" id="button" ng-if="calday2 >= 0 && calday2 <= 10">{{calday2}} Day <br>Reset</button>
+		<button ng-click="tree(2)" class="btn btn-warning btn-xs" id="button" ng-if="calday2 >= 11 && calday2 <= 19">{{calday2}} Day <br>Reset</button>
+		<button ng-click="tree(2)" class="btn btn-danger btn-xs" id="button" ng-if="calday2 >= 20">{{calday2}} Days <br>Left</button>
+
+		<button ng-click="tree(3)" class="btn btn-primary btn-xs" id="button" ng-if="calday3 < 0">Add</button>
+		<button ng-click="tree(3)" class="btn btn-success btn-xs" id="button" ng-if="calday3 >= 0 && calday3 <= 10">{{calday3}} Day <br>Reset</button>
+		<button ng-click="tree(3)" class="btn btn-warning btn-xs" id="button" ng-if="calday3 >= 11 && calday3 <= 19">{{calday3}} Day <br>Reset</button>
+		<button ng-click="tree(3)" class="btn btn-danger btn-xs" id="button" ng-if="calday3 >= 20">{{calday3}} Days <br>Left</button>
+
+		<button ng-click="tree(4)" class="btn btn-primary btn-xs" id="button" ng-if="calday4 < 0">Add</button>
+		<button ng-click="tree(4)" class="btn btn-success btn-xs" id="button" ng-if="calday4 >= 0 && calday4 <= 10">{{calday4}} Day <br>Reset</button>
+		<button ng-click="tree(4)" class="btn btn-warning btn-xs" id="button" ng-if="calday4 >= 11 && calday4 <= 19">{{calday4}} Day <br>Reset</button>
+		<button ng-click="tree(4)" class="btn btn-danger btn-xs" id="button" ng-if="calday4 >= 20">{{calday4}} Days <br>Left</button>
+
+		<button ng-click="tree(5)" class="btn btn-primary btn-xs" id="button" ng-if="calday5 < 0">Add</button>
+		<button ng-click="tree(5)" class="btn btn-success btn-xs" id="button" ng-if="calday5 >= 0 && calday5 <= 10">{{calday5}} Day <br>Reset</button>
+		<button ng-click="tree(5)" class="btn btn-warning btn-xs" id="button" ng-if="calday5 >= 11 && calday5 <= 19">{{calday5}} Day <br>Reset</button>
+		<button ng-click="tree(5)" class="btn btn-danger btn-xs" id="button" ng-if="calday5 >= 20">{{calday5}} Days <br>Left</button>
+
+		<button ng-click="tree(6)" class="btn btn-primary btn-xs" id="button" ng-if="calday6 < 0">Add</button>
+		<button ng-click="tree(6)" class="btn btn-success btn-xs" id="button" ng-if="calday6 >= 0 && calday6 <= 10">{{calday6}} Day <br>Reset</button>
+		<button ng-click="tree(6)" class="btn btn-warning btn-xs" id="button" ng-if="calday6 >= 11 && calday6 <= 19">{{calday6}} Day <br>Reset</button>
+		<button ng-click="tree(6)" class="btn btn-danger btn-xs" id="button" ng-if="calday6 >= 20">{{calday6}} Days <br>Left</button>
 
 		<!-- <button ng-click="tree(2)" class="btn btn-primary btn-xs" id="button">{{   (totalHole[1].status === false)?  'Add' : 'Reset'    }} 2</button>
 		<button ng-click="tree(3)" class="btn btn-primary btn-xs" id="button">{{   (totalHole[2].status === false)?  'Add' : 'Reset'    }} 3</button>
@@ -101,27 +126,40 @@
 		<button ng-click="tree(36)" class="btn btn-primary btn-xs" id="button">{{   (totalHole[35].status === false)?  'Add' : 'Reset'    }} 36</button> -->
 	</div>
 
-	<!-- <div ng-repeat=" s in hole">
-		{{s.hole}} // {{s.end}} // {{s.status}}
-	</div> -->
 
-	{{calday1}},{{calday2}}<br>
-	{{calday3}},{{calday4}}<br>
-	{{calday5}},{{calday6}}<br>
+	<div class="row">
+<!-- switch -->
+		<div class="col-md-4"></div>
+		<div class="col-md-5">
 
-	<div class="dropdown">
-	    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Tutorials
+		<select class="form-control " ng-model="list" width="10px">
+			<option>Choose for Reset</option>
+			<option value="0">1</option>
+			<option value="1">2</option>
+			<option value="2">3</option>
+			<option value="3">4</option>
+			<option value="4">5</option>
+		</select>
+
+		</div>
+
+	
+		<button ng-click="reday(list)">Reset</button>
+	</div>
+
+	<!-- <div class="dropdown" >
+	    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" >Select Hole
 	    	<span class="caret"></span>
 	    </button>
 
-	    <ul class="dropdown-menu">
+	    <ul class="dropdown-menu" >
 	      <li class="dropdown-header">Floor 1 Left</li>
-	      		<li><a href="#">Hole 1</a></li>
-	       	<li><a href="#">Hole 2</a></li>
-	       	<li><a href="#">Hole 3</a></li>
-	       	<li><a href="#">Hole 4</a></li>
-	       	<li><a href="#">Hole 5</a></li>
-	       	<li><a href="#">Hole 6</a></li>
+	      		<li><a value="0">Hole 1</a></li>
+	       	<li><a value="1">Hole 2</a></li>
+	       	<li><a value="2">Hole 3</a></li>
+	       	<li><a value="3">Hole 4</a></li>
+	       	<li><a value="4">Hole 5</a></li>
+	       	<li><a value="5"">Hole 6</a></li>
 	      <li class="divider"></li>
 	      <li class="dropdown-header">Floor 1 Right</li>
 	      		<li><a href="#">Hole 1</a></li>
@@ -131,8 +169,42 @@
 	       	<li><a href="#">Hole 5</a></li>
 	       	<li><a href="#">Hole 6</a></li>
 	      <li class="divider"></li>
+	       <li class="dropdown-header">Floor 2 Left</li>
+	      		<li><a href="#">Hole 1</a></li>
+	       	<li><a href="#">Hole 2</a></li>
+	       	<li><a href="#">Hole 3</a></li>
+	       	<li><a href="#">Hole 4</a></li>
+	       	<li><a href="#">Hole 5</a></li>
+	       	<li><a href="#">Hole 6</a></li>
+	      <li class="divider"></li>
+	       <li class="dropdown-header">Floor 2 Right</li>
+	      		<li><a href="#">Hole 1</a></li>
+	       	<li><a href="#">Hole 2</a></li>
+	       	<li><a href="#">Hole 3</a></li>
+	       	<li><a href="#">Hole 4</a></li>
+	       	<li><a href="#">Hole 5</a></li>
+	       	<li><a href="#">Hole 6</a></li>
+	      <li class="divider"></li>
+	     	<li class="dropdown-header">Floor 3 Left</li>
+	      		<li><a href="#">Hole 1</a></li>
+	       	<li><a href="#">Hole 2</a></li>
+	       	<li><a href="#">Hole 3</a></li>
+	       	<li><a href="#">Hole 4</a></li>
+	       	<li><a href="#">Hole 5</a></li>
+	       	<li><a href="#">Hole 6</a></li>
+	      <li class="divider"></li>
+	       <li class="dropdown-header">Floor 3 Right</li>
+	      		<li><a href="#">Hole 1</a></li>
+	       	<li><a href="#">Hole 2</a></li>
+	       	<li><a href="#">Hole 3</a></li>
+	       	<li><a href="#">Hole 4</a></li>
+	       	<li><a href="#">Hole 5</a></li>
+	       	<li><a href="#">Hole 6</a></li>
+	      <li class="divider"></li>
 	    </ul>
 	  </div>
+
+	  <button ng-click="reday(list)">Reset</button> -->
 
 
 

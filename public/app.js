@@ -7,6 +7,14 @@ angular.module('app', [])
 		$scope.sheets = []
 		$scope.status = 44
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////time
+	
+		$scope.time = moment().format('LT')
+		console.log($scope.time)
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////time
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////control
 
 		$http.get('https://sheetsu.com/apis/v1.0/5eac309ffcdc').then(function(res){
@@ -51,7 +59,7 @@ angular.module('app', [])
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////date2
 ///
-		setInterval(function(){ 
+		setInterval(function(){
 
 		$scope.dateEndDate = []
 
@@ -77,152 +85,117 @@ angular.module('app', [])
 		 // test tak
 		$scope.hole = [
 			{
-				hole: 1,
-				status: false
+				hole: 1,status: false
 			},
 			{
-				hole: 2,
-				status: false
+				hole: 2,status: false
 			},
 			{
-				hole: 3,
-				status: false
+				hole: 3,status: false
 			},
 			{
-				hole: 4,
-				status: false
+				hole: 4,status: false
 			},
 			{
-				hole: 5,
-				status: false
+				hole: 5,status: false
 			},
 			{
-				hole: 6,
-				status: false
+				hole: 6,status: false
 			},
 			{
-				hole: 7,
-				status: false
+				hole: 7,status: false
 			},
 			{
-				hole: 8,
-				status: false
+				hole: 8,status: false
 			},
 			{
-				hole: 9,
-				status: false
+				hole: 9,status: false
 			},
 			{
-				hole: 10,
-				status: false
+				hole: 10,status: false
 			},
 			{
-				hole: 11,
-				status: false
+				hole: 11,status: false
 			},
 			{
-				hole: 12,
-				status: false
+				hole: 12,status: false
 			},
 			{
-				hole: 13,
-				status: false
+				hole: 13,status: false
 			},
 			{
-				hole: 14,
-				status: false
+				hole: 14,status: false
 			},
 			{
-				hole: 15,
-				status: false
+				hole: 15,status: false
 			},
 			{
-				hole: 16,
-				status: false
+				hole: 16,status: false
 			},
 			{
-				hole: 17,
-				status: false
+				hole: 17,status: false
 			},
 			{
-				hole: 18,
-				status: false
+				hole: 18,status: false
 			},
 			{
-				hole: 19,
-				status: false
+				hole: 19,status: false
 			},
 			{
-				hole: 20,
-				status: false
+				hole: 20,status: false
 			},
 			{
-				hole: 21,
-				status: false
+				hole: 21,status: false
 			},
 			{
-				hole: 22,
-				status: false
+				hole: 22,status: false
 			},
 			{
-				hole: 23,
-				status: false
+				hole: 23,status: false
 			},
 			{
-				hole: 24,
-				status: false
+				hole: 24,status: false
 			},
 			{
-				hole: 25,
-				status: false
+				hole: 25,status: false
 			},
 			{
-				hole: 26,
-				status: false
+				hole: 26,status: false
 			},
 			{
-				hole: 27,
-				status: false
+				hole: 27,status: false
 			},
 			{
-				hole: 28,
-				status: false
+				hole: 28,status: false
 			},
 			{
-				hole: 29,
-				status: false
+				hole: 29,status: false
 			},
 			{
-				hole: 30,
-				status: false
+				hole: 30,status: false
 			},
 			{
-				hole: 31,
-				status: false
+				hole: 31,status: false
 			},
 			{
-				hole: 32,
-				status: false
+				hole: 32,status: false
 			},
 			{
-				hole: 33,
-				status: false
+				hole: 33,status: false
 			},
 			{
-				hole: 34,
-				status: false
+				hole: 34,status: false
 			},
 			{
-				hole: 35,
-				status: false
+				hole: 35,status: false
 			},
 			{
-				hole: 36,
-				status: false
+				hole: 36,status: false
 			}
 		]
 
 		$scope.totalHole = []
+
 		getHole()
 		function getHole () {
 			$http.get('/dateend').then(res => {
@@ -230,7 +203,10 @@ angular.module('app', [])
 			})
 		}
 
+		var curt  = $scope.totalHole.findIndex(i => i.hole === hole)
+
 		$scope.tree = function (hole) {
+
 		 	var index =  $scope.hole.findIndex(i => i.hole === hole)
 
 		 	if ($scope.totalHole[index].status === false) {
@@ -272,8 +248,22 @@ angular.module('app', [])
 		 				$scope.totalHole[index].status =  res.data.status
 		 			})
 		 		})
-		 		// console.log($scope.totalHole[index].status)
+
 		 	}//else
+		 }//function
+
+		$scope.reday = function (list) {
+				console.log('list : ' + list)
+			$http.get('/dateend').then(res => {
+				console.log('hole : '+res.data[list].hole)
+
+				$scope.hole[list].status = false
+		 		$scope.hole[list].end =  moment().add(35, 'days').calendar()
+				$http.put('/dateend/' + $scope.totalHole[list]._id, $scope.hole[list]).then(res => {
+		 				$scope.totalHole[list].status =  res.data.status
+		 			})
+			})
+
 		 }//function
 
 		$scope.getdataeat = function(){
@@ -391,16 +381,13 @@ angular.module('app', [])
 				$scope.calday35 = dayend35.diff(start, 'days')
 				$scope.calday36 = dayend36.diff(start, 'days')
 
-				// $scope.calday = $scope.dateEndDate.find().end
-				// console.log($scope.dateEndDate1)
-				// console.log($scope.calday1)
-
 			})
 		}
 
 		$scope.getdataeat()
 		 // // test tak
-}, 1000);
+
+		}, 1000);
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////date2
 })
