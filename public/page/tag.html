@@ -21,8 +21,6 @@
 	<!-- Moment time -->
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
 
-	
-
 	<!-- Compiled and minified CSS -->
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css"> -->
   <!-- Compiled and minified JavaScript -->
@@ -50,39 +48,425 @@
 	  </div>
 	</nav>
 
-	<div style="background-color:  yellow; ">
+	<div  class="container"><!-- container -->
+
 		<!-- <button ng-click="tree(1)" class="btn btn-primary btn-xs" id="button" ng-iff="calday1 > 0">{{ (totalHole[0].status === false)?  'Add' : 'Reset'}} 1</button>
 		<button ng-click="tree(1)" class="btn btn-warning btn-xs" id="button" ng-if="calday1 <= 0">Reset 1</button> -->
 
-		<button ng-click="tree(1)" class="btn btn-primary btn-xs" id="button" ng-if="calday1 < 0">Add</button>
-		<button ng-click="tree(1)" class="btn btn-success btn-xs" id="button" ng-if="calday1 >= 0 && calday1 <= 10">{{calday1}} Day <br>Reset</button>
-		<button ng-click="tree(1)" class="btn btn-warning btn-xs" id="button" ng-if="calday1 >= 11 && calday1 <= 19">{{calday1}} Day <br>Reset</button>
-		<button ng-click="tree(1)" class="btn btn-danger btn-xs" id="button" ng-if="calday1 >= 20">{{calday1}} Days <br>Left</button>
+	<div class="row">
+<!-- Left////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+		<div class="col-md-6 col-sd-6" >
+			<div class="row">
+				<div class="col-md-6 col-sd-6 col-md-offset-4 col-sd-offset-4">
 
-		<button ng-click="tree(2)" class="btn btn-primary btn-xs" id="button" ng-if="calday2 < 0">Add</button>
-		<button ng-click="tree(2)" class="btn btn-success btn-xs" id="button" ng-if="calday2 >= 0 && calday2 <= 10">{{calday2}} Day <br>Reset</button>
-		<button ng-click="tree(2)" class="btn btn-warning btn-xs" id="button" ng-if="calday2 >= 11 && calday2 <= 19">{{calday2}} Day <br>Reset</button>
-		<button ng-click="tree(2)" class="btn btn-danger btn-xs" id="button" ng-if="calday2 >= 20">{{calday2}} Days <br>Left</button>
+				<div class="panel panel-success" style="background-color: #f3ffef;">
+				<div class="panel-heading"><h4><center>Floor 3 Left 1-6</center></h4></div>
+				<div class="panel-body">
 
-		<button ng-click="tree(3)" class="btn btn-primary btn-xs" id="button" ng-if="calday3 < 0">Add</button>
-		<button ng-click="tree(3)" class="btn btn-success btn-xs" id="button" ng-if="calday3 >= 0 && calday3 <= 10">{{calday3}} Day <br>Reset</button>
-		<button ng-click="tree(3)" class="btn btn-warning btn-xs" id="button" ng-if="calday3 >= 11 && calday3 <= 19">{{calday3}} Day <br>Reset</button>
-		<button ng-click="tree(3)" class="btn btn-danger btn-xs" id="button" ng-if="calday3 >= 20">{{calday3}} Days <br>Left</button>
+					<div class="row">
+						<div class="col-md-12 col-sd-12 " style="background-color: #f3ffef;">
+						<center>
+						
+							<table >
+								<tr>
+								  <td >
+								  	<button ng-click="tree(1)" class="btn btn-primary btn-xs" id="buttonhole" ng-if="calday1 < 0">Add</button>
+									<button ng-click="tree(1)" class="btn btn-success btn-xs" id="buttonhole" ng-if="calday1 >= 0 && calday1 <= 10">{{calday1}} Day <br>Reset</button>
+									<button ng-click="tree(1)" class="btn btn-warning btn-xs" id="buttonhole" ng-if="calday1 >= 11 && calday1 <= 19">{{calday1}} Day <br>Reset</button>
+									<button ng-click="tree(1)" class="btn btn-danger btn-xs" id="buttonhole" ng-if="calday1 >= 20">{{calday1}} Days <br>Left</button>
+								  </td>
+								  <td >
+								  	<button ng-click="tree(2)" class="btn btn-primary btn-xs" id="buttonhole" ng-if="calday2 < 0">Add</button>
+									<button ng-click="tree(2)" class="btn btn-success btn-xs" id="buttonhole" ng-if="calday2 >= 0 && calday2 <= 10">{{calday2}} Day <br>Reset</button>
+									<button ng-click="tree(2)" class="btn btn-warning btn-xs" id="buttonhole" ng-if="calday2 >= 11 && calday2 <= 19">{{calday2}} Day <br>Reset</button>
+									<button ng-click="tree(2)" class="btn btn-danger btn-xs" id="buttonhole" ng-if="calday2 >= 20">{{calday2}} Days <br>Left</button>
+									</td>
+								</tr>
 
-		<button ng-click="tree(4)" class="btn btn-primary btn-xs" id="button" ng-if="calday4 < 0">Add</button>
-		<button ng-click="tree(4)" class="btn btn-success btn-xs" id="button" ng-if="calday4 >= 0 && calday4 <= 10">{{calday4}} Day <br>Reset</button>
-		<button ng-click="tree(4)" class="btn btn-warning btn-xs" id="button" ng-if="calday4 >= 11 && calday4 <= 19">{{calday4}} Day <br>Reset</button>
-		<button ng-click="tree(4)" class="btn btn-danger btn-xs" id="button" ng-if="calday4 >= 20">{{calday4}} Days <br>Left</button>
+								<tr>
+								  <td >
+								  	<button ng-click="tree(3)" class="btn btn-primary btn-xs" id="buttonhole" ng-if="calday3 < 0">Add</button>
+									<button ng-click="tree(3)" class="btn btn-success btn-xs" id="buttonhole" ng-if="calday3 >= 0 && calday3 <= 10">{{calday3}} Day <br>Reset</button>
+									<button ng-click="tree(3)" class="btn btn-warning btn-xs" id="buttonhole" ng-if="calday3 >= 11 && calday3 <= 19">{{calday3}} Day <br>Reset</button>
+									<button ng-click="tree(3)" class="btn btn-danger btn-xs" id="buttonhole" ng-if="calday3 >= 20">{{calday3}} Days <br>Left</button>
+									</td>
+								  <td >
+								  	<button ng-click="tree(4)" class="btn btn-primary btn-xs" id="buttonhole" ng-if="calday4 < 0">Add</button>
+									<button ng-click="tree(4)" class="btn btn-success btn-xs" id="buttonhole" ng-if="calday4 >= 0 && calday4 <= 10">{{calday4}} Day <br>Reset</button>
+									<button ng-click="tree(4)" class="btn btn-warning btn-xs" id="buttonhole" ng-if="calday4 >= 11 && calday4 <= 19">{{calday4}} Day <br>Reset</button>
+									<button ng-click="tree(4)" class="btn btn-danger btn-xs" id="buttonhole" ng-if="calday4 >= 20">{{calday4}} Days <br>Left</button>
+									</td>
+								</tr>
 
-		<button ng-click="tree(5)" class="btn btn-primary btn-xs" id="button" ng-if="calday5 < 0">Add</button>
-		<button ng-click="tree(5)" class="btn btn-success btn-xs" id="button" ng-if="calday5 >= 0 && calday5 <= 10">{{calday5}} Day <br>Reset</button>
-		<button ng-click="tree(5)" class="btn btn-warning btn-xs" id="button" ng-if="calday5 >= 11 && calday5 <= 19">{{calday5}} Day <br>Reset</button>
-		<button ng-click="tree(5)" class="btn btn-danger btn-xs" id="button" ng-if="calday5 >= 20">{{calday5}} Days <br>Left</button>
+								<tr>
+								  <td >
+								  	<button ng-click="tree(5)" class="btn btn-primary btn-xs" id="buttonhole" ng-if="calday5 < 0">Add</button>
+									<button ng-click="tree(5)" class="btn btn-success btn-xs" id="buttonhole" ng-if="calday5 >= 0 && calday5 <= 10">{{calday5}} Day <br>Reset</button>
+									<button ng-click="tree(5)" class="btn btn-warning btn-xs" id="buttonhole" ng-if="calday5 >= 11 && calday5 <= 19">{{calday5}} Day <br>Reset</button>
+									<button ng-click="tree(5)" class="btn btn-danger btn-xs" id="buttonhole" ng-if="calday5 >= 20">{{calday5}} Days <br>Left</button>
+									</td>
+								  <td >
+								  	<button ng-click="tree(6)" class="btn btn-primary btn-xs" id="buttonhole" ng-if="calday6 < 0">Add</button>
+									<button ng-click="tree(6)" class="btn btn-success btn-xs" id="buttonhole" ng-if="calday6 >= 0 && calday6 <= 10">{{calday6}} Day <br>Reset</button>
+									<button ng-click="tree(6)" class="btn btn-warning btn-xs" id="buttonhole" ng-if="calday6 >= 11 && calday6 <= 19">{{calday6}} Day <br>Reset</button>
+									<button ng-click="tree(6)" class="btn btn-danger btn-xs" id="buttonhole" ng-if="calday6 >= 20">{{calday6}} Days <br>Left</button>
+									</td>
+								</tr>
+							</table>
+							<br>
+						</center>
+						</div>
+					</div>
+				</div>
+				</div>
 
-		<button ng-click="tree(6)" class="btn btn-primary btn-xs" id="button" ng-if="calday6 < 0">Add</button>
-		<button ng-click="tree(6)" class="btn btn-success btn-xs" id="button" ng-if="calday6 >= 0 && calday6 <= 10">{{calday6}} Day <br>Reset</button>
-		<button ng-click="tree(6)" class="btn btn-warning btn-xs" id="button" ng-if="calday6 >= 11 && calday6 <= 19">{{calday6}} Day <br>Reset</button>
-		<button ng-click="tree(6)" class="btn btn-danger btn-xs" id="button" ng-if="calday6 >= 20">{{calday6}} Days <br>Left</button>
+				<div class="panel panel-info" style="background-color: #f3ffef;">
+				<div class="panel-heading"><h4><center>Floor 2 Left 13-18</center></h4></div>
+				<div class="panel-body">
+
+					<div class="row">
+						<div class="col-md-12 col-sd-12 " style="background-color: #f3ffef;">
+						<center>
+							<table>
+								<tr>
+								  <td >
+								  	<button ng-click="tree(13)" class="btn btn-primary btn-xs" id="buttonhole" ng-if="calday13 < 0">Add</button>
+									<button ng-click="tree(13)" class="btn btn-success btn-xs" id="buttonhole" ng-if="calday13 >= 0 && calday13 <= 10">{{calday13}} Day <br>Reset</button>
+									<button ng-click="tree(13)" class="btn btn-warning btn-xs" id="buttonhole" ng-if="calday13 >= 11 && calday13 <= 19">{{calday13}} Day <br>Reset</button>
+									<button ng-click="tree(13)" class="btn btn-danger btn-xs" id="buttonhole" ng-if="calday13 >= 20">{{calday13}} Days <br>Left</button>
+								  </td>
+								  <td >
+								  	<button ng-click="tree(14)" class="btn btn-primary btn-xs" id="buttonhole" ng-if="calday14 < 0">Add</button>
+									<button ng-click="tree(14)" class="btn btn-success btn-xs" id="buttonhole" ng-if="calday14 >= 0 && calday14 <= 10">{{calday14}} Day <br>Reset</button>
+									<button ng-click="tree(14)" class="btn btn-warning btn-xs" id="buttonhole" ng-if="calday14 >= 11 && calday14 <= 19">{{calday14}} Day <br>Reset</button>
+									<button ng-click="tree(14)" class="btn btn-danger btn-xs" id="buttonhole" ng-if="calday14 >= 20">{{calday14}} Days <br>Left</button>
+									</td>
+								</tr>
+
+								<tr>
+								  <td >
+								  	<button ng-click="tree(15)" class="btn btn-primary btn-xs" id="buttonhole" ng-if="calday15 < 0">Add</button>
+									<button ng-click="tree(15)" class="btn btn-success btn-xs" id="buttonhole" ng-if="calday15 >= 0 && calday15 <= 10">{{calday15}} Day <br>Reset</button>
+									<button ng-click="tree(15)" class="btn btn-warning btn-xs" id="buttonhole" ng-if="calday15 >= 11 && calday15 <= 19">{{calday15}} Day <br>Reset</button>
+									<button ng-click="tree(15)" class="btn btn-danger btn-xs" id="buttonhole" ng-if="calday15 >= 20">{{calday15}} Days <br>Left</button>
+									</td>
+								  <td >
+								  	<button ng-click="tree(16)" class="btn btn-primary btn-xs" id="buttonhole" ng-if="calday16 < 0">Add</button>
+									<button ng-click="tree(16)" class="btn btn-success btn-xs" id="buttonhole" ng-if="calday16 >= 0 && calday16 <= 10">{{calday16}} Day <br>Reset</button>
+									<button ng-click="tree(16)" class="btn btn-warning btn-xs" id="buttonhole" ng-if="calday16 >= 11 && calday16 <= 19">{{calday16}} Day <br>Reset</button>
+									<button ng-click="tree(16)" class="btn btn-danger btn-xs" id="buttonhole" ng-if="calday16 >= 20">{{calday16}} Days <br>Left</button>
+									</td>
+								</tr>
+
+								<tr>
+								  <td >
+								  	<button ng-click="tree(17)" class="btn btn-primary btn-xs" id="buttonhole" ng-if="calday17 < 0">Add</button>
+									<button ng-click="tree(17)" class="btn btn-success btn-xs" id="buttonhole" ng-if="calday17 >= 0 && calday17 <= 10">{{calday17}} Day <br>Reset</button>
+									<button ng-click="tree(17)" class="btn btn-warning btn-xs" id="buttonhole" ng-if="calday17 >= 11 && calday17 <= 19">{{calday17}} Day <br>Reset</button>
+									<button ng-click="tree(17)" class="btn btn-danger btn-xs" id="buttonhole" ng-if="calday17 >= 20">{{calday17}} Days <br>Left</button>
+									</td>
+								  <td >
+								  	<button ng-click="tree(18)" class="btn btn-primary btn-xs" id="buttonhole" ng-if="calday18 < 0">Add</button>
+									<button ng-click="tree(18)" class="btn btn-success btn-xs" id="buttonhole" ng-if="calday18 >= 0 && calday18 <= 10">{{calday18}} Day <br>Reset</button>
+									<button ng-click="tree(18)" class="btn btn-warning btn-xs" id="buttonhole" ng-if="calday18 >= 11 && calday18 <= 19">{{calday18}} Day <br>Reset</button>
+									<button ng-click="tree(18)" class="btn btn-danger btn-xs" id="buttonhole" ng-if="calday18 >= 20">{{calday18}} Days <br>Left</button>
+									</td>
+								</tr>
+							</table>
+							<br>
+						</center>
+						</div>
+					</div>
+
+				</div>
+				</div>
+
+				<div class="panel panel-warning" style="background-color: #f3ffef;">
+				<div class="panel-heading"><h4><center>Floor 1 Left 25-30</center></h4></div>
+				<div class="panel-body">
+
+					<div class="row">
+						<div class="col-md-12 col-sd-12 " style="background-color: #f3ffef;">
+						<center>
+							<table>
+								<tr>
+								  <td >
+								  	<button ng-click="tree(25)" class="btn btn-primary btn-xs" id="buttonhole" ng-if="calday25 < 0">Add</button>
+									<button ng-click="tree(25)" class="btn btn-success btn-xs" id="buttonhole" ng-if="calday25 >= 0 && calday25 <= 10">{{calday25}} Day <br>Reset</button>
+									<button ng-click="tree(25)" class="btn btn-warning btn-xs" id="buttonhole" ng-if="calday25 >= 11 && calday25 <= 19">{{calday25}} Day <br>Reset</button>
+									<button ng-click="tree(25)" class="btn btn-danger btn-xs" id="buttonhole" ng-if="calday25 >= 20">{{calday25}} Days <br>Left</button>
+								  </td>
+								  <td >
+								  	<button ng-click="tree(26)" class="btn btn-primary btn-xs" id="buttonhole" ng-if="calday26 < 0">Add</button>
+									<button ng-click="tree(26)" class="btn btn-success btn-xs" id="buttonhole" ng-if="calday26 >= 0 && calday26 <= 10">{{calday26}} Day <br>Reset</button>
+									<button ng-click="tree(26)" class="btn btn-warning btn-xs" id="buttonhole" ng-if="calday26 >= 11 && calday26 <= 19">{{calday26}} Day <br>Reset</button>
+									<button ng-click="tree(26)" class="btn btn-danger btn-xs" id="buttonhole" ng-if="calday26 >= 20">{{calday26}} Days <br>Left</button>
+									</td>
+								</tr>
+
+								<tr>
+								  <td >
+								  	<button ng-click="tree(27)" class="btn btn-primary btn-xs" id="buttonhole" ng-if="calday27 < 0">Add</button>
+									<button ng-click="tree(27)" class="btn btn-success btn-xs" id="buttonhole" ng-if="calday27 >= 0 && calday27 <= 10">{{calday27}} Day <br>Reset</button>
+									<button ng-click="tree(27)" class="btn btn-warning btn-xs" id="buttonhole" ng-if="calday27 >= 11 && calday27 <= 19">{{calday27}} Day <br>Reset</button>
+									<button ng-click="tree(27)" class="btn btn-danger btn-xs" id="buttonhole" ng-if="calday27 >= 20">{{calday27}} Days <br>Left</button>
+									</td>
+								  <td >
+								  	<button ng-click="tree(28)" class="btn btn-primary btn-xs" id="buttonhole" ng-if="calday28 < 0">Add</button>
+									<button ng-click="tree(28)" class="btn btn-success btn-xs" id="buttonhole" ng-if="calday28 >= 0 && calday28 <= 10">{{calday28}} Day <br>Reset</button>
+									<button ng-click="tree(28)" class="btn btn-warning btn-xs" id="buttonhole" ng-if="calday28 >= 11 && calday28 <= 19">{{calday28}} Day <br>Reset</button>
+									<button ng-click="tree(28)" class="btn btn-danger btn-xs" id="buttonhole" ng-if="calday28 >= 20">{{calday28}} Days <br>Left</button>
+									</td>
+								</tr>
+
+								<tr>
+								  <td >
+								  	<button ng-click="tree(29)" class="btn btn-primary btn-xs" id="buttonhole" ng-if="calday29 < 0">Add</button>
+									<button ng-click="tree(29)" class="btn btn-success btn-xs" id="buttonhole" ng-if="calday29 >= 0 && calday29 <= 10">{{calday29}} Day <br>Reset</button>
+									<button ng-click="tree(29)" class="btn btn-warning btn-xs" id="buttonhole" ng-if="calday29 >= 11 && calday29 <= 19">{{calday29}} Day <br>Reset</button>
+									<button ng-click="tree(29)" class="btn btn-danger btn-xs" id="buttonhole" ng-if="calday29 >= 20">{{calday29}} Days <br>Left</button>
+									</td>
+								  <td >
+								  	<button ng-click="tree(30)" class="btn btn-primary btn-xs" id="buttonhole" ng-if="calday30 < 0">Add</button>
+									<button ng-click="tree(30)" class="btn btn-success btn-xs" id="buttonhole" ng-if="calday30 >= 0 && calday30 <= 10">{{calday30}} Day <br>Reset</button>
+									<button ng-click="tree(30)" class="btn btn-warning btn-xs" id="buttonhole" ng-if="calday30 >= 11 && calday30 <= 19">{{calday30}} Day <br>Reset</button>
+									<button ng-click="tree(30)" class="btn btn-danger btn-xs" id="buttonhole" ng-if="calday30 >= 20">{{calday30}} Days <br>Left</button>
+									</td>
+								</tr>
+							</table>
+							<br>
+						</center>
+						</div>
+					</div>
+				</div>
+				</div>
+
+				</div>
+			</div>
+		</div>
+<!-- Right////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+		<div class="col-md-6 col-sd-6" >
+			<div class="row">
+				<div class="col-md-6 col-sd-6 col-md-offset-2 col-sd-offset-2">
+
+				<div class="panel panel-success" style="background-color: #f3ffef;">
+				<div class="panel-heading"><h4><center>Floor 3 Left 7-12</center></h4></div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-md-12 col-sd-12 " style="background-color: #f3ffef;">
+						<center>
+						
+							<table>
+								<tr>
+								  <td >
+								  	<button ng-click="tree(7)" class="btn btn-primary btn-xs" id="buttonhole" ng-if="calday7 < 0">Add</button>
+									<button ng-click="tree(7)" class="btn btn-success btn-xs" id="buttonhole" ng-if="calday7 >= 0 && calday7 <= 10">{{calday7}} Day <br>Reset</button>
+									<button ng-click="tree(7)" class="btn btn-warning btn-xs" id="buttonhole" ng-if="calday7 >= 11 && calday7 <= 19">{{calday7}} Day <br>Reset</button>
+									<button ng-click="tree(7)" class="btn btn-danger btn-xs" id="buttonhole" ng-if="calday7 >= 20">{{calday7}} Days <br>Left</button>
+								  </td>
+								  <td >
+								  	<button ng-click="tree(8)" class="btn btn-primary btn-xs" id="buttonhole" ng-if="calday8 < 0">Add</button>
+									<button ng-click="tree(8)" class="btn btn-success btn-xs" id="buttonhole" ng-if="calday8 >= 0 && calday8 <= 10">{{calday8}} Day <br>Reset</button>
+									<button ng-click="tree(8)" class="btn btn-warning btn-xs" id="buttonhole" ng-if="calday8 >= 11 && calday8 <= 19">{{calday8}} Day <br>Reset</button>
+									<button ng-click="tree(8)" class="btn btn-danger btn-xs" id="buttonhole" ng-if="calday8 >= 20">{{calday8}} Days <br>Left</button>
+									</td>
+								</tr>
+
+								<tr>
+								  <td >
+								  	<button ng-click="tree(9)" class="btn btn-primary btn-xs" id="buttonhole" ng-if="calday9 < 0">Add</button>
+									<button ng-click="tree(9)" class="btn btn-success btn-xs" id="buttonhole" ng-if="calday9 >= 0 && calday9 <= 10">{{calday9}} Day <br>Reset</button>
+									<button ng-click="tree(9)" class="btn btn-warning btn-xs" id="buttonhole" ng-if="calday9 >= 11 && calday9 <= 19">{{calday9}} Day <br>Reset</button>
+									<button ng-click="tree(9)" class="btn btn-danger btn-xs" id="buttonhole" ng-if="calday9 >= 20">{{calday9}} Days <br>Left</button>
+									</td>
+								  <td >
+								  	<button ng-click="tree(10)" class="btn btn-primary btn-xs" id="buttonhole" ng-if="calday10 < 0">Add</button>
+									<button ng-click="tree(10)" class="btn btn-success btn-xs" id="buttonhole" ng-if="calday10 >= 0 && calday10 <= 10">{{calday10}} Day <br>Reset</button>
+									<button ng-click="tree(10)" class="btn btn-warning btn-xs" id="buttonhole" ng-if="calday10 >= 11 && calday10 <= 19">{{calday10}} Day <br>Reset</button>
+									<button ng-click="tree(10)" class="btn btn-danger btn-xs" id="buttonhole" ng-if="calday10 >= 20">{{calday10}} Days <br>Left</button>
+									</td>
+								</tr>
+
+								<tr>
+								  <td >
+								  	<button ng-click="tree(11)" class="btn btn-primary btn-xs" id="buttonhole" ng-if="calday11 < 0">Add</button>
+									<button ng-click="tree(11)" class="btn btn-success btn-xs" id="buttonhole" ng-if="calday11 >= 0 && calday11 <= 10">{{calday11}} Day <br>Reset</button>
+									<button ng-click="tree(11)" class="btn btn-warning btn-xs" id="buttonhole" ng-if="calday11 >= 11 && calday11 <= 19">{{calday11}} Day <br>Reset</button>
+									<button ng-click="tree(11)" class="btn btn-danger btn-xs" id="buttonhole" ng-if="calday11 >= 20">{{calday11}} Days <br>Left</button>
+									</td>
+								  <td >
+								  	<button ng-click="tree(12)" class="btn btn-primary btn-xs" id="buttonhole" ng-if="calday12 < 0">Add</button>
+									<button ng-click="tree(12)" class="btn btn-success btn-xs" id="buttonhole" ng-if="calday12 >= 0 && calday12 <= 10">{{calday12}} Day <br>Reset</button>
+									<button ng-click="tree(12)" class="btn btn-warning btn-xs" id="buttonhole" ng-if="calday12 >= 11 && calday12 <= 19">{{calday12}} Day <br>Reset</button>
+									<button ng-click="tree(12)" class="btn btn-danger btn-xs" id="buttonhole" ng-if="calday12 >= 20">{{calday12}} Days <br>Left</button>
+									</td>
+								</tr>
+							</table>
+							<br>
+						</center>
+						</div>
+					</div>
+				</div>
+				</div>
+				
+				<div class="panel panel-info" style="background-color: #f3ffef;">
+				<div class="panel-heading"><h4><center>Floor 2 Left 13-18</center></h4></div>
+				<div class="panel-body">
+
+					<div class="row">
+						<div class="col-md-12 col-sd-12 "  style="background-color: #f3ffef;">
+						<center>
+						
+							<table>
+								<tr>
+								  <td >
+								  	<button ng-click="tree(19)" class="btn btn-primary btn-xs" id="buttonhole" ng-if="calday19 < 0">Add</button>
+									<button ng-click="tree(19)" class="btn btn-success btn-xs" id="buttonhole" ng-if="calday19 >= 0 && calday19 <= 10">{{calday19}} Day <br>Reset</button>
+									<button ng-click="tree(19)" class="btn btn-warning btn-xs" id="buttonhole" ng-if="calday19 >= 11 && calday19 <= 19">{{calday19}} Day <br>Reset</button>
+									<button ng-click="tree(19)" class="btn btn-danger btn-xs" id="buttonhole" ng-if="calday19 >= 20">{{calday19}} Days <br>Left</button>
+								  </td>
+								  <td >
+								  	<button ng-click="tree(20)" class="btn btn-primary btn-xs" id="buttonhole" ng-if="calday20 < 0">Add</button>
+									<button ng-click="tree(20)" class="btn btn-success btn-xs" id="buttonhole" ng-if="calday20 >= 0 && calday20 <= 10">{{calday20}} Day <br>Reset</button>
+									<button ng-click="tree(20)" class="btn btn-warning btn-xs" id="buttonhole" ng-if="calday20 >= 11 && calday20 <= 19">{{calday20}} Day <br>Reset</button>
+									<button ng-click="tree(20)" class="btn btn-danger btn-xs" id="buttonhole" ng-if="calday20 >= 20">{{calday20}} Days <br>Left</button>
+									</td>
+								</tr>
+
+								<tr>
+								  <td >
+								  	<button ng-click="tree(21)" class="btn btn-primary btn-xs" id="buttonhole" ng-if="calday21 < 0">Add</button>
+									<button ng-click="tree(21)" class="btn btn-success btn-xs" id="buttonhole" ng-if="calday21 >= 0 && calday21 <= 10">{{calday21}} Day <br>Reset</button>
+									<button ng-click="tree(21)" class="btn btn-warning btn-xs" id="buttonhole" ng-if="calday21 >= 11 && calday21 <= 19">{{calday21}} Day <br>Reset</button>
+									<button ng-click="tree(21)" class="btn btn-danger btn-xs" id="buttonhole" ng-if="calday21 >= 20">{{calday21}} Days <br>Left</button>
+									</td>
+								  <td >
+								  	<button ng-click="tree(22)" class="btn btn-primary btn-xs" id="buttonhole" ng-if="calday22 < 0">Add</button>
+									<button ng-click="tree(22)" class="btn btn-success btn-xs" id="buttonhole" ng-if="calday22 >= 0 && calday22 <= 10">{{calday22}} Day <br>Reset</button>
+									<button ng-click="tree(22)" class="btn btn-warning btn-xs" id="buttonhole" ng-if="calday22 >= 11 && calday22 <= 19">{{calday22}} Day <br>Reset</button>
+									<button ng-click="tree(22)" class="btn btn-danger btn-xs" id="buttonhole" ng-if="calday22 >= 20">{{calday22}} Days <br>Left</button>
+									</td>
+								</tr>
+
+								<tr>
+								  <td >
+								  	<button ng-click="tree(23)" class="btn btn-primary btn-xs" id="buttonhole" ng-if="calday23 < 0">Add</button>
+									<button ng-click="tree(23)" class="btn btn-success btn-xs" id="buttonhole" ng-if="calday23 >= 0 && calday23 <= 10">{{calday23}} Day <br>Reset</button>
+									<button ng-click="tree(23)" class="btn btn-warning btn-xs" id="buttonhole" ng-if="calday23 >= 11 && calday23 <= 19">{{calday23}} Day <br>Reset</button>
+									<button ng-click="tree(23)" class="btn btn-danger btn-xs" id="buttonhole" ng-if="calday23 >= 20">{{calday23}} Days <br>Left</button>
+									</td>
+								  <td >
+								  	<button ng-click="tree(24)" class="btn btn-primary btn-xs" id="buttonhole" ng-if="calday24 < 0">Add</button>
+									<button ng-click="tree(24)" class="btn btn-success btn-xs" id="buttonhole" ng-if="calday24 >= 0 && calday24 <= 10">{{calday24}} Day <br>Reset</button>
+									<button ng-click="tree(24)" class="btn btn-warning btn-xs" id="buttonhole" ng-if="calday24 >= 11 && calday24 <= 19">{{calday24}} Day <br>Reset</button>
+									<button ng-click="tree(24)" class="btn btn-danger btn-xs" id="buttonhole" ng-if="calday24 >= 20">{{calday24}} Days <br>Left</button>
+									</td>
+								</tr>
+							</table>
+							<br>
+						</center>
+						</div>
+					</div>
+
+				</div>
+				</div>
+
+				<div class="panel panel-warning" style="background-color: #f3ffef;">
+				<div class="panel-heading"><h4><center>Floor 1 Left 31-36</center></h4></div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-md-12 col-sd-12 " style="background-color: #f3ffef;">
+						<center>
+							<table>
+								<tr>
+								  <td >
+								  	<button ng-click="tree(31)" class="btn btn-primary btn-xs" id="buttonhole" ng-if="calday31 < 0">Add</button>
+									<button ng-click="tree(31)" class="btn btn-success btn-xs" id="buttonhole" ng-if="calday31 >= 0 && calday31 <= 10">{{calday31}} Day <br>Reset</button>
+									<button ng-click="tree(31)" class="btn btn-warning btn-xs" id="buttonhole" ng-if="calday31 >= 11 && calday31 <= 19">{{calday31}} Day <br>Reset</button>
+									<button ng-click="tree(31)" class="btn btn-danger btn-xs" id="buttonhole" ng-if="calday31 >= 20">{{calday31}} Days <br>Left</button>
+								  </td>
+								  <td >
+								  	<button ng-click="tree(32)" class="btn btn-primary btn-xs" id="buttonhole" ng-if="calday32 < 0">Add</button>
+									<button ng-click="tree(32)" class="btn btn-success btn-xs" id="buttonhole" ng-if="calday32 >= 0 && calday32 <= 10">{{calday32}} Day <br>Reset</button>
+									<button ng-click="tree(32)" class="btn btn-warning btn-xs" id="buttonhole" ng-if="calday32 >= 11 && calday32 <= 19">{{calday32}} Day <br>Reset</button>
+									<button ng-click="tree(32)" class="btn btn-danger btn-xs" id="buttonhole" ng-if="calday32 >= 20">{{calday32}} Days <br>Left</button>
+									</td>
+								</tr>
+
+								<tr>
+								  <td >
+								  	<button ng-click="tree(33)" class="btn btn-primary btn-xs" id="buttonhole" ng-if="calday33 < 0">Add</button>
+									<button ng-click="tree(33)" class="btn btn-success btn-xs" id="buttonhole" ng-if="calday33 >= 0 && calday33 <= 10">{{calday33}} Day <br>Reset</button>
+									<button ng-click="tree(33)" class="btn btn-warning btn-xs" id="buttonhole" ng-if="calday33 >= 11 && calday33 <= 19">{{calday33}} Day <br>Reset</button>
+									<button ng-click="tree(33)" class="btn btn-danger btn-xs" id="buttonhole" ng-if="calday33 >= 20">{{calday33}} Days <br>Left</button>
+									</td>
+								  <td >
+								  	<button ng-click="tree(34)" class="btn btn-primary btn-xs" id="buttonhole" ng-if="calday34 < 0">Add</button>
+									<button ng-click="tree(34)" class="btn btn-success btn-xs" id="buttonhole" ng-if="calday34 >= 0 && calday34 <= 10">{{calday34}} Day <br>Reset</button>
+									<button ng-click="tree(34)" class="btn btn-warning btn-xs" id="buttonhole" ng-if="calday34 >= 11 && calday34 <= 19">{{calday34}} Day <br>Reset</button>
+									<button ng-click="tree(34)" class="btn btn-danger btn-xs" id="buttonhole" ng-if="calday34 >= 20">{{calday34}} Days <br>Left</button>
+									</td>
+								</tr>
+
+								<tr>
+								  <td >
+								  	<button ng-click="tree(35)" class="btn btn-primary btn-xs" id="buttonhole" ng-if="calday35 < 0">Add</button>
+									<button ng-click="tree(35)" class="btn btn-success btn-xs" id="buttonhole" ng-if="calday35 >= 0 && calday35 <= 10">{{calday35}} Day <br>Reset</button>
+									<button ng-click="tree(35)" class="btn btn-warning btn-xs" id="buttonhole" ng-if="calday35 >= 11 && calday35 <= 19">{{calday35}} Day <br>Reset</button>
+									<button ng-click="tree(35)" class="btn btn-danger btn-xs" id="buttonhole" ng-if="calday35 >= 20">{{calday35}} Days <br>Left</button>
+									</td>
+								  <td >
+								  	<button ng-click="tree(36)" class="btn btn-primary btn-xs" id="buttonhole" ng-if="calday36 < 0">Add</button>
+									<button ng-click="tree(36)" class="btn btn-success btn-xs" id="buttonhole" ng-if="calday36 >= 0 && calday36 <= 10">{{calday36}} Day <br>Reset</button>
+									<button ng-click="tree(36)" class="btn btn-warning btn-xs" id="buttonhole" ng-if="calday36 >= 11 && calday36 <= 19">{{calday36}} Day <br>Reset</button>
+									<button ng-click="tree(36)" class="btn btn-danger btn-xs" id="buttonhole" ng-if="calday36 >= 20">{{calday36}} Days <br>Left</button>
+									</td>
+								</tr>
+							</table>
+							<br>
+						</center>
+						</div>
+					</div>
+
+				</div>
+				</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+			<!-- <button ng-click="tree(1)" class="btn btn-primary btn-xs" id="button" ng-if="calday1 < 0">Add</button>
+			<button ng-click="tree(1)" class="btn btn-success btn-xs" id="button" ng-if="calday1 >= 0 && calday1 <= 10">{{calday1}} Day <br>Reset</button>
+			<button ng-click="tree(1)" class="btn btn-warning btn-xs" id="button" ng-if="calday1 >= 11 && calday1 <= 19">{{calday1}} Day <br>Reset</button>
+			<button ng-click="tree(1)" class="btn btn-danger btn-xs" id="button" ng-if="calday1 >= 20">{{calday1}} Days <br>Left</button> -->
+
+			<!-- <button ng-click="tree(2)" class="btn btn-primary btn-xs" id="button" ng-if="calday2 < 0">Add</button>
+			<button ng-click="tree(2)" class="btn btn-success btn-xs" id="button" ng-if="calday2 >= 0 && calday2 <= 10">{{calday2}} Day <br>Reset</button>
+			<button ng-click="tree(2)" class="btn btn-warning btn-xs" id="button" ng-if="calday2 >= 11 && calday2 <= 19">{{calday2}} Day <br>Reset</button>
+			<button ng-click="tree(2)" class="btn btn-danger btn-xs" id="button" ng-if="calday2 >= 20">{{calday2}} Days <br>Left</button> -->
+
+			<!-- <button ng-click="tree(3)" class="btn btn-primary btn-xs" id="button" ng-if="calday3 < 0">Add</button>
+			<button ng-click="tree(3)" class="btn btn-success btn-xs" id="button" ng-if="calday3 >= 0 && calday3 <= 10">{{calday3}} Day <br>Reset</button>
+			<button ng-click="tree(3)" class="btn btn-warning btn-xs" id="button" ng-if="calday3 >= 11 && calday3 <= 19">{{calday3}} Day <br>Reset</button>
+			<button ng-click="tree(3)" class="btn btn-danger btn-xs" id="button" ng-if="calday3 >= 20">{{calday3}} Days <br>Left</button> -->
+
+			<!-- <button ng-click="tree(4)" class="btn btn-primary btn-xs" id="button" ng-if="calday4 < 0">Add</button>
+			<button ng-click="tree(4)" class="btn btn-success btn-xs" id="button" ng-if="calday4 >= 0 && calday4 <= 10">{{calday4}} Day <br>Reset</button>
+			<button ng-click="tree(4)" class="btn btn-warning btn-xs" id="button" ng-if="calday4 >= 11 && calday4 <= 19">{{calday4}} Day <br>Reset</button>
+			<button ng-click="tree(4)" class="btn btn-danger btn-xs" id="button" ng-if="calday4 >= 20">{{calday4}} Days <br>Left</button> -->
+
+			<!-- <button ng-click="tree(5)" class="btn btn-primary btn-xs" id="button" ng-if="calday5 < 0">Add</button>
+			<button ng-click="tree(5)" class="btn btn-success btn-xs" id="button" ng-if="calday5 >= 0 && calday5 <= 10">{{calday5}} Day <br>Reset</button>
+			<button ng-click="tree(5)" class="btn btn-warning btn-xs" id="button" ng-if="calday5 >= 11 && calday5 <= 19">{{calday5}} Day <br>Reset</button>
+			<button ng-click="tree(5)" class="btn btn-danger btn-xs" id="button" ng-if="calday5 >= 20">{{calday5}} Days <br>Left</button> -->
+
+			<!-- <button ng-click="tree(6)" class="btn btn-primary btn-xs" id="button" ng-if="calday6 < 0">Add</button>
+			<button ng-click="tree(6)" class="btn btn-success btn-xs" id="button" ng-if="calday6 >= 0 && calday6 <= 10">{{calday6}} Day <br>Reset</button>
+			<button ng-click="tree(6)" class="btn btn-warning btn-xs" id="button" ng-if="calday6 >= 11 && calday6 <= 19">{{calday6}} Day <br>Reset</button>
+			<button ng-click="tree(6)" class="btn btn-danger btn-xs" id="button" ng-if="calday6 >= 20">{{calday6}} Days <br>Left</button> -->
+
 
 		<!-- <button ng-click="tree(2)" class="btn btn-primary btn-xs" id="button">{{   (totalHole[1].status === false)?  'Add' : 'Reset'    }} 2</button>
 		<button ng-click="tree(3)" class="btn btn-primary btn-xs" id="button">{{   (totalHole[2].status === false)?  'Add' : 'Reset'    }} 3</button>
@@ -124,28 +508,40 @@
 		<button ng-click="tree(34)" class="btn btn-primary btn-xs" id="button">{{   (totalHole[33].status === false)?  'Add' : 'Reset'    }} 34</button>
 		<button ng-click="tree(35)" class="btn btn-primary btn-xs" id="button">{{   (totalHole[34].status === false)?  'Add' : 'Reset'    }} 35</button>
 		<button ng-click="tree(36)" class="btn btn-primary btn-xs" id="button">{{   (totalHole[35].status === false)?  'Add' : 'Reset'    }} 36</button> -->
-	</div>
+
+		<br>
+			<div class="row">
+
+				<div class="col-md-4 col-sd-4"></div>
+				<div class="col-md-3 col-sd-3">
+
+					<select class="form-control " ng-model="list" width="10px">
+						<option selected>Choose for Reset</option>
+						<option value="0">1</option>
+						<option value="1">2</option>
+						<option value="2">3</option>
+						<option value="3">4</option>
+						<option value="4">5</option>
+					</select>
+
+				</div>
+
+				<div class="col-md-1 col-sd-1">
+					<center>
+						<button ng-click="reday(list)" class="btn btn-primary">Reset</button>
+					</center>
+				</div>
+
+				<div class="col-md-4 col-sd-4"></div>
+
+			</div>
+<br>
+
+	</div> <!-- container -->
 
 
-	<div class="row">
-<!-- switch -->
-		<div class="col-md-4"></div>
-		<div class="col-md-5">
 
-		<select class="form-control " ng-model="list" width="10px">
-			<option>Choose for Reset</option>
-			<option value="0">1</option>
-			<option value="1">2</option>
-			<option value="2">3</option>
-			<option value="3">4</option>
-			<option value="4">5</option>
-		</select>
 
-		</div>
-
-	
-		<button ng-click="reday(list)">Reset</button>
-	</div>
 
 	<!-- <div class="dropdown" >
 	    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" >Select Hole
@@ -206,38 +602,9 @@
 
 	  <button ng-click="reday(list)">Reset</button> -->
 
-
-
-
-	<div class="container" ng-repeat="veta in dateEndDate">
-	<!-- <button ng-click="eat()" class="btn btn-default btn-lg">{{sum1}}</button> -->
-
-		<!-- <button ng-click="eat()" class="btn btn-primary btn-lg" id="button" ng-if="countDate(veta.end) > 0">{{countDate(veta.end)}} Day</button>
-		<button ng-click="reset(veta._id)" class="btn btn-warning btn-lg" id="button" ng-if="countDate(veta.end) <= 0">Reset</button> -->
-
-
-<!-- 		<button ng-click="eat()" class="btn btn-primary btn-lg" id="button">{{countDate()}} Day</button> <br>
-		<button ng-click="eat()" class="btn btn-primary btn-lg" id="button">{{countDate()}} Day</button> <br>
-		<button ng-click="eat()" class="btn btn-primary btn-lg" id="button">{{countDate()}} Day</button> <br>
-		<button ng-click="eat()" class="btn btn-primary btn-lg" id="button">{{countDate()}} Day</button> <br>
-		<button ng-click="eat()" class="btn btn-primary btn-lg" id="button">{{countDate()}} Day</button> <br>
- -->
-		<!-- <div ng-repeat="show in sumday1">
-			{{show.end1}} -- {{show.sumday1}} <br> <hr>
-		</div>
-
-		<div ng-repeat="item in dateEndDate">
-			<h1>{{item.end}}</h1>
-		</div> -->
-<!-- navbar -->
-	</div>
-
-
-
-
 <!-- body////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
-<!-- <input type="date" ng-model="test555"> -->
+
 
 
 
