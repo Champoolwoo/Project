@@ -220,46 +220,47 @@ angular.module('app', [])
 		$scope.tree = function (hole) {
 
 		 	var index =  $scope.hole.findIndex(i => i.hole === hole)
+		 	$http.post('/dateend', $scope.hole[index]).then(function (response){})
 
-		 	if ($scope.totalHole[index].status === false) {
-		 		console.log('first')
-		 		$scope.hole[index].status = true
-		 		$scope.hole[index].end =  moment().add(36, 'days').calendar()
-		 		var cur  = $scope.totalHole.findIndex(i => i.hole === hole)
+		 	// if ($scope.totalHole[index].status === false) {
+		 	// 	console.log('first')
+		 	// 	$scope.hole[index].status = true
+		 	// 	$scope.hole[index].end =  moment().add(36, 'days').calendar()
+		 	// 	var cur  = $scope.totalHole.findIndex(i => i.hole === hole)
 
-		 		if (cur >= 0) {
-		 			console.log('th')
-		 			// $http.put('/dateend/' +  $scope.totalHole[cur]._id, $scope.totalHole[cur]).then(res => {})
-		 			$http.put('/dateend/' +  $scope.totalHole[cur]._id, $scope.hole[index]).then(res => {
-		 				// console.log('th' +res)
-		 				$scope.totalHole[index].status =  res.data.status
-		 			})
-		 		} else if (cur === -1) {
-		 			console.log('sec')
-		 			$http.post('/dateend', $scope.hole[index]).then(function (response){})
-		 		}else {
-		 			$http.post('/dateend', $scope.hole[index]).then(function (response){})
-		 		}
-		 		getHole()
-		 	}else {
-		 		console.log('four')
-		 		var _id = ''
-		 		$scope.hole[index].end =  moment().add(36, 'days').calendar()
-		 		$scope.hole[index].status = false
-		 		$http.get('/dateend').then(res => {
-		 			$scope.dateEndDate = res.data
-		 			res.data.findIndex(i => {
-		 				if (i.hole === hole)  {
-		 					_id =  i._id
-		 				}
-		 			})
-		 		}).then(() => {
-		 			$scope.hole[index].status = false
-		 			$scope.hole[index].end =  moment().add(36, 'days').calendar()
-		 			$http.put('/dateend/' + _id, $scope.hole[index]).then(res => {
-		 				$scope.totalHole[index].status =  res.data.status
-		 			})
-		 		})
+		 	// 	if (cur >= 0) {
+		 	// 		console.log('th')
+		 	// 		// $http.put('/dateend/' +  $scope.totalHole[cur]._id, $scope.totalHole[cur]).then(res => {})
+		 	// 		$http.put('/dateend/' +  $scope.totalHole[cur]._id, $scope.hole[index]).then(res => {
+		 	// 			// console.log('th' +res)
+		 	// 			$scope.totalHole[index].status =  res.data.status
+		 	// 		})
+		 	// 	} else if (cur === -1) {
+		 	// 		console.log('sec')
+		 	// 		$http.post('/dateend', $scope.hole[index]).then(function (response){})
+		 	// 	}else {
+		 	// 		$http.post('/dateend', $scope.hole[index]).then(function (response){})
+		 	// 	}
+		 	// 	getHole()
+		 	// }else {
+		 	// 	console.log('four')
+		 	// 	var _id = ''
+		 	// 	$scope.hole[index].end =  moment().add(36, 'days').calendar()
+		 	// 	$scope.hole[index].status = false
+		 	// 	$http.get('/dateend').then(res => {
+		 	// 		$scope.dateEndDate = res.data
+		 	// 		res.data.findIndex(i => {
+		 	// 			if (i.hole === hole)  {
+		 	// 				_id =  i._id
+		 	// 			}
+		 	// 		})
+		 	// 	}).then(() => {
+		 	// 		$scope.hole[index].status = false
+		 	// 		$scope.hole[index].end =  moment().add(36, 'days').calendar()
+		 	// 		$http.put('/dateend/' + _id, $scope.hole[index]).then(res => {
+		 	// 			$scope.totalHole[index].status =  res.data.status
+		 	// 		})
+		 	// 	})
 
 		 	}//else
 		 }//function
