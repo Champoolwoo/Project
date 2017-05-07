@@ -220,7 +220,6 @@ angular.module('app', [])
 		$scope.tree = function (hole) {
 
 		 	var index =  $scope.hole.findIndex(i => i.hole === hole)
-		 	$http.post('/dateend', $scope.hole[index]).then(function (response){})
 
 		 	if ($scope.totalHole[index].status === false) {
 		 		console.log('first')
