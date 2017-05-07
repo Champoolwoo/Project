@@ -277,6 +277,8 @@ angular.module('app', [])
 		$scope.getdataeat = function(){
 			$http.get('/dateend').then(function (response){
 
+				$scope.calday1 = 0
+
 				$scope.dateEndDate1 = response.data[0].end
 				$scope.dateEndDate2 = response.data[1].end
 				$scope.dateEndDate3 = response.data[2].end
