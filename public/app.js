@@ -32,34 +32,37 @@ angular.module('app', [])
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////control
 
 		$scope.ledOn = function(){
-			$http.get('/ledOn').then(function (response){
-				console.log(response)
-			})
+			// $http.get('/ledOn').then(function (response){
+			// 	console.log(response)
+			// })
+			console.log("ledOn")
 		}
 
 		$scope.ledOff = function(){
-			$http.get('/ledOff').then(function (response){
-				console.log(response)
-			})
+			// $http.get('/ledOff').then(function (response){
+			// 	console.log(response)
+			// })
+			console.log("ledOn")
 		}
 
 		$scope.pumpOn = function(){
-			$http.get('/pumpOn').then(function (response){
-				console.log(response)
-			})
+			// $http.get('/pumpOn').then(function (response){
+			// 	console.log(response)
+			// })
+			console.log("ledOn")
 		}
 
 		$scope.pumpOff = function(){
-			$http.get('/pumpOff').then(function (response){
-				console.log(response)
-			})
+			// $http.get('/pumpOff').then(function (response){
+			// 	console.log(response)
+			// })
+			console.log("ledOn")
 		}
 
 		$scope.takeCam = function(){
 			$http.get('/takeCam').then(function (response){
 				console.log(response)
 			})
-
 			console.log("Take Photo")
 		}
 
@@ -204,12 +207,13 @@ angular.module('app', [])
 
 		$scope.totalHole = []
 
-		getHole()
 		function getHole () {
 			$http.get('/dateend').then(res => {
 				$scope.totalHole = res.data
 			})
 		}
+
+		getHole()
 
 		var curt  = $scope.totalHole.findIndex(i => i.hole === hole)
 
@@ -220,7 +224,7 @@ angular.module('app', [])
 		 	if ($scope.totalHole[index].status === false) {
 		 		console.log('first')
 		 		$scope.hole[index].status = true
-		 		$scope.hole[index].end =  moment().add(35, 'days').calendar()
+		 		$scope.hole[index].end =  moment().add(36, 'days').calendar()
 		 		var cur  = $scope.totalHole.findIndex(i => i.hole === hole)
 
 		 		if (cur >= 0) {
@@ -240,7 +244,7 @@ angular.module('app', [])
 		 	}else {
 		 		console.log('four')
 		 		var _id = ''
-		 		$scope.hole[index].end =  moment().add(35, 'days').calendar()
+		 		$scope.hole[index].end =  moment().add(36, 'days').calendar()
 		 		$scope.hole[index].status = false
 		 		$http.get('/dateend').then(res => {
 		 			$scope.dateEndDate = res.data
@@ -251,7 +255,7 @@ angular.module('app', [])
 		 			})
 		 		}).then(() => {
 		 			$scope.hole[index].status = false
-		 			$scope.hole[index].end =  moment().add(35, 'days').calendar()
+		 			$scope.hole[index].end =  moment().add(36, 'days').calendar()
 		 			$http.put('/dateend/' + _id, $scope.hole[index]).then(res => {
 		 				$scope.totalHole[index].status =  res.data.status
 		 			})
@@ -266,7 +270,7 @@ angular.module('app', [])
 				console.log('hole : '+res.data[list].hole)
 
 				$scope.hole[list].status = false
-		 		$scope.hole[list].end =  moment().add(35, 'days').calendar()
+		 		$scope.hole[list].end =  moment().add(36, 'days').calendar()
 				$http.put('/dateend/' + $scope.totalHole[list]._id, $scope.hole[list]).then(res => {
 		 				$scope.totalHole[list].status =  res.data.status
 		 			})

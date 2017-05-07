@@ -49,7 +49,6 @@ app.get('/takeCam', function(req, res, next){
 
 //////////////////////////////////////////////////////////////////////////////////////
 app.post('/dateend', function(req, res){
-	// console.log(req.body)
 	var obj = new DateEat(req.body)
 	obj.save(function(err, obj){
 		if(err){
