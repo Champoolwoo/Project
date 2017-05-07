@@ -262,7 +262,7 @@ angular.module('app', [])
 		 	// 		})
 		 	// 	})
 
-		 	}//else
+		 	// }//else
 		 }//function
 
 		$scope.reday = function (list) {
