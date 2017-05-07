@@ -56,9 +56,9 @@ angular.module('app', [])
 		}
 
 		$scope.takeCam = function(){
-			// $http.get('/takeCam').then(function (response){
-			// 	console.log(response)
-			// })
+			$http.get('/takeCam').then(function (response){
+				console.log(response)
+			})
 
 			console.log("Take Photo")
 		}
@@ -276,8 +276,6 @@ angular.module('app', [])
 
 		$scope.getdataeat = function(){
 			$http.get('/dateend').then(function (response){
-
-				$scope.calday1 = 0
 
 				$scope.dateEndDate1 = response.data[0].end
 				$scope.dateEndDate2 = response.data[1].end
