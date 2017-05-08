@@ -62,6 +62,9 @@ angular.module('app', [])
 		$scope.takeCam = function(){
 			$http.get('/takeCam').then(function (response){
 				console.log(response)
+				setTimeout(function () {
+        				window.location = 'index.html'
+     				 }, 3000)
 			})
 			console.log("Take Photo")
 		}
