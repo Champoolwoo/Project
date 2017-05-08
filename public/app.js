@@ -63,7 +63,7 @@ angular.module('app', [])
 			$http.get('/takeCam').then(function (response){
 				console.log(response)
 				setTimeout(function () {
-        				window.location = 'page/picture.html'
+        				window.location = 'picture.html'
      				 }, 3000)
 			})
 			console.log("Take Photo")
