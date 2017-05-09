@@ -32,30 +32,30 @@ angular.module('app', [])
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////control
 
 		$scope.ledOn = function(){
-			// $http.get('/ledOn').then(function (response){
-			// 	console.log(response)
-			// })
+			$http.get('/ledOn').then(function (response){
+				console.log(response)
+			})
 			console.log("ledOn")
 		}
 
 		$scope.ledOff = function(){
-			// $http.get('/ledOff').then(function (response){
-			// 	console.log(response)
-			// })
+			$http.get('/ledOff').then(function (response){
+				console.log(response)
+			})
 			console.log("ledOn")
 		}
 
 		$scope.pumpOn = function(){
-			// $http.get('/pumpOn').then(function (response){
-			// 	console.log(response)
-			// })
+			$http.get('/pumpOn').then(function (response){
+				console.log(response)
+			})
 			console.log("ledOn")
 		}
 
 		$scope.pumpOff = function(){
-			// $http.get('/pumpOff').then(function (response){
-			// 	console.log(response)
-			// })
+			$http.get('/pumpOff').then(function (response){
+				console.log(response)
+			})
 			console.log("ledOn")
 		}
 
