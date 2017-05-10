@@ -47,7 +47,7 @@ $(document).ready(function(e) {
     userName: config.mqtt_user,
     password: config.mqtt_password,
     onSuccess: function() {
-     
+
       $("#status").text("Connected").removeClass().addClass("connected");
       client.subscribe("/ESP/PUMP");
       mqttSend("/ESP/PUMP", "GET");
@@ -56,7 +56,7 @@ $(document).ready(function(e) {
     },
     onFailure: function(e) {
       $("#status").text("Error : " + e).removeClass().addClass("error");
-   
+
     }
   });
 

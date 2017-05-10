@@ -17,14 +17,61 @@ angular.module('app', [])
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Data Googlesheets
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////time
-		// setInterval(function(){
-		// 	$scope.time = moment().format('LT')
-		// 	console.log($scope.time)
 
-		// 	if($scope.time = )}{
+		$scope.stabtn = [{
+				btnnum: 1,
+				statusbtn: false
+			},{
+				btnnum: 2,
+				statusbtn: false
+			}
+		]
 
-		// 	}
-		// },1000)
+		$scope.totalbtn = []
+
+		function getbtn () {
+			$http.get('/btn').then(res => {
+				$scope.totalbtn = res.data
+			})
+		}
+
+		getbtn()
+
+		// var indexbtn =  $scope.stabtn.findIndex(i => i.btnnum === btnnum)
+		//  	$scope.stabtn[indexbtn].status = true
+		//  	$http.post('/ิbtn', $scope.btnnum[indexbtn]).then(function (response){})
+
+		setInterval(function(){
+			var d = new Date()
+			$scope.time1 = d.toLocaleTimeString()
+			console.log($scope.time1)
+
+			if($scope.time1 == '10:00:00' || $scope.time1 == '23:00:00'){
+				$http.get('/ledOff').then(function (response){
+					console.log(response)
+
+				})
+				$http.get('/pumpOff').then(function (response){
+					console.log(response)
+
+				})
+				console.log("pumpOff")
+				console.log("ledOff")
+			}else if($scope.time1 == '11:00:00 '|| $scope.time1== '00:00:00'){
+				$http.get('/ledOn').then(function (response){
+					console.log(response)
+
+				})
+				$http.get('/pumpOn').then(function (response){
+					console.log(response)
+
+				})
+				console.log("pumpOn")
+				console.log("ledOn")
+			}
+
+		}, 1000);
+
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////time
@@ -32,31 +79,51 @@ angular.module('app', [])
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////control
 
 		$scope.ledOn = function(){
-			$http.get('/ledOn').then(function (response){
-				console.log(response)
-			})
+			// $http.get('/ledOn').then(function (response){
+			// 	console.log(response)
+			// })
+			$scope.stabtn[0].statusbtn = true///////////////////////////////
+			$http.post('/btn', $scope.stabtn[0]).then(function (response){})///////////////////////////////
 			console.log("ledOn")
+			// $http.put('/btn/' + $scope.totalbtn[0]._id, $scope.stabtn[0]).then(res => {
+		 // 		$scope.totalbtn[0].statusbtn =  res.data.statusbtn
+		 // 	})
 		}
 
 		$scope.ledOff = function(){
-			$http.get('/ledOff').then(function (response){
-				console.log(response)
-			})
-			console.log("ledOn")
+			// $http.get('/ledOff').then(function (response){
+			// 	console.log(response)
+			// })
+			$scope.stabtn[0].statusbtn = false///////////////////////////////
+			$http.post('/btn', $scope.stabtn[0]).then(function (response){})///////////////////////////////
+			console.log("ledOff")
+			// $http.put('/btn/' + $scope.totalbtn[0]._id, $scope.stabtn[0]).then(res => {
+		 // 		$scope.totalbtn[0].statusbtn =  res.data.statusbtn
+		 // 	})
 		}
 
 		$scope.pumpOn = function(){
-			$http.get('/pumpOn').then(function (response){
-				console.log(response)
-			})
-			console.log("ledOn")
+			// $http.get('/pumpOn').then(function (response){
+			// 	console.log(response)
+			// })
+			$scope.stabtn[1].statusbtn = true///////////////////////////////
+			$http.post('/btn', $scope.stabtn[1]).then(function (response){})///////////////////////////////
+			console.log("pumpOn")
+			// $http.put('/btn/' + $scope.totalbtn[1]._id, $scope.stabtn[1]).then(res => {
+		 // 		$scope.totalbtn[1].statusbtn =  res.data.statusbtn
+		 // 	})
 		}
 
 		$scope.pumpOff = function(){
-			$http.get('/pumpOff').then(function (response){
-				console.log(response)
-			})
-			console.log("ledOn")
+			// $http.get('/pumpOff').then(function (response){
+			// 	console.log(response)
+			// })
+			$scope.stabtn[1].statusbtn = false///////////////////////////////
+			$http.post('/btn', $scope.stabtn[1]).then(function (response){})///////////////////////////////
+			console.log("pumpOff")
+			// $http.put('/btn/' + $scope.totalbtn[0]._id, $scope.stabtn[1]).then(res => {
+		 // 		$scope.totalbtn[1].statusbtn =  res.data.statusbtn
+		 // 	})
 		}
 
 		$scope.takeCam = function(){

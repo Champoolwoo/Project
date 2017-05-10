@@ -5,6 +5,11 @@ var bodyParser = require('body-parser')
 var Schema = mongoose.Schema
 var thingSchema = new Schema({}, {strict: false})
 var DateEat = mongoose.model('SmartFarm', thingSchema)
+
+var Schema2 = mongoose.Schema
+var thingSchema2 = new Schema2({}, {strict: false})
+var eventbtn = mongoose.model('event', thingSchema2)////////////////
+
 var app = express()
 
 mongoose.connect('mongodb://localhost:27017/farm')
@@ -78,8 +83,37 @@ app.put('/dateend/:id', function (req, res) {
       })
   })
 
+//////////////////////////////////////////////////////////////////////////////////////
 
+app.post('/btn', function(req, res){
+	var objbtn = new eventbtn(req.body)
+	objbtn.save(function(err, obj){
+		if(err){
+			return(res.send(err))
+		}else{
+			return(res.send('done'))
+		}
+	})
+})
 
+app.get('/btn', function (req, res) {
+    eventbtn.find({})
+    .exec(function (err, done) {
+      if (err) console.log(err)
+      res.send(done)
+    })
+  })
+
+app.put('/btn/:id', function (req, res) {
+    eventbtn.findOneAndUpdate(
+      { _id: req.params.id },
+      { $set: {btnnum: req.body.btnnum, statusbtn: req.body.statusbtn} },
+      { new: true })
+      .exec(function (err, done) {
+        if (err) console.log(err)
+        res.send(done)
+      })
+  })
 
 app.listen(3000)
 console.log('running on port 3000.')
