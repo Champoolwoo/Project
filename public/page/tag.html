@@ -472,6 +472,80 @@
 		</div>
 	</div>
 
+	<br>
+			<div class="row">
+				<div class="col-md-12 col-sd-12"><center><h4>Select Hole for Reset</h4></center></div>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-4 col-sd-4"></div>
+				<div class="col-md-4 col-sd-4">
+				<center>
+
+					<select class="form-control " ng-model="list" width="10px">
+						<option>------ Floor 3 Box Left -----</option>
+						<option value="0">Floor 3 Box Left Hole 1</option>
+						<option value="1">Floor 3 Box Left Hole 2</option>
+						<option value="2">Floor 3 Box Left Hole 3</option>
+						<option value="3">Floor 3 Box Left Hole 4</option>
+						<option value="4">Floor 3 Box Left Hole 5</option>
+						<option value="5">Floor 3 Box Left Hole 6</option>
+
+						<option>------ Floor 3 Box Right -----</option>
+						<option value="6">Floor 3 Box Right Hole 1</option>
+						<option value="7">Floor 3 Box Right Hole 2</option>
+						<option value="8">Floor 3 Box Right Hole 3</option>
+						<option value="9">Floor 3 Box Right Hole 4</option>
+						<option value="10">Floor 3 Box Right Hole 5</option>
+						<option value="11">Floor 3 Box Right Hole 6</option>
+
+						<option>------ Floor 2 Box Left -----</option>
+						<option value="12">Floor 2 Box Left Hole 1</option>
+						<option value="13">Floor 2 Box Left Hole 2</option>
+						<option value="14">Floor 2 Box Left Hole 3</option>
+						<option value="15">Floor 2 Box Left Hole 4</option>
+						<option value="16">Floor 2 Box Left Hole 5</option>
+						<option value="17">Floor 2 Box Left Hole 6</option>
+
+						<option>------ Floor 2 Box Right -----</option>
+						<option value="18">Floor 2 Box Right Hole 1</option>
+						<option value="19">Floor 2 Box Right Hole 2</option>
+						<option value="20">Floor 2 Box Right Hole 3</option>
+						<option value="21">Floor 2 Box Right Hole 4</option>
+						<option value="22">Floor 2 Box Right Hole 5</option>
+						<option value="23">Floor 2 Box Right Hole 6</option>
+
+						<option>------ Floor 1 Box Left -----</option>
+						<option value="24">Floor 1 Box Left Hole 1</option>
+						<option value="25">Floor 1 Box Left Hole 2</option>
+						<option value="26">Floor 1 Box Left Hole 3</option>
+						<option value="27">Floor 1 Box Left Hole 4</option>
+						<option value="28">Floor 1 Box Left Hole 5</option>
+						<option value="29">Floor 1 Box Left Hole 6</option>
+
+						<option>------ Floor 1 Box Right -----</option>
+						<option value="30">Floor 1 Box Right Hole 1</option>
+						<option value="31">Floor 1 Box Right Hole 2</option>
+						<option value="32">Floor 1 Box Right Hole 3</option>
+						<option value="33">Floor 1 Box Right Hole 4</option>
+						<option value="34">Floor 1 Box Right Hole 5</option>
+						<option value="35">Floor 1 Box Right Hole 6</option>
+					</select>
+				</center>
+				</div>
+				<div class="col-md-4 col-sd-4"></div>
+
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-md-12 col-sd-12">
+					<center>
+						<button ng-click="reday(list)" class="btn btn-primary">Reset</button>
+					</center>
+				</div>
+			</div>
+			<br>
+
 
 			<!-- <button ng-click="tree(1)" class="btn btn-primary btn-xs" id="button" ng-if="calday1 < 0">Add</button>
 			<button ng-click="tree(1)" class="btn btn-success btn-xs" id="button" ng-if="calday1 >= 0 && calday1 <= 10">{{calday1}} Day <br>Reset</button>
@@ -545,33 +619,7 @@
 		<button ng-click="tree(35)" class="btn btn-primary btn-xs" id="button">{{   (totalHole[34].status === false)?  'Add' : 'Reset'    }} 35</button>
 		<button ng-click="tree(36)" class="btn btn-primary btn-xs" id="button">{{   (totalHole[35].status === false)?  'Add' : 'Reset'    }} 36</button> -->
 
-		<br>
-			<div class="row">
-
-				<div class="col-md-4 col-sd-4"></div>
-				<div class="col-md-3 col-sd-3">
-
-					<select class="form-control " ng-model="list" width="10px">
-						<option selected>Choose for Reset</option>
-						<option value="0">1</option>
-						<option value="1">2</option>
-						<option value="2">3</option>
-						<option value="3">4</option>
-						<option value="4">5</option>
-					</select>
-
-				</div>
-
-				<div class="col-md-1 col-sd-1">
-					<center>
-						<button ng-click="reday(list)" class="btn btn-primary">Reset</button>
-					</center>
-				</div>
-
-				<div class="col-md-4 col-sd-4"></div>
-
-			</div>
-<br>
+		
 
 	</div> <!-- container -->
 

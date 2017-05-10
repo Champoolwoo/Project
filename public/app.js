@@ -32,8 +32,14 @@ angular.module('app', [])
 		function getbtn () {
 			$http.get('/btn').then(res => {
 				$scope.totalbtn = res.data
+				$scope.staLED = res.data[0].statusbtn
+				$scope.staPump = res.data[1].statusbtn
+				console.log($scope.staLED)
 			})
 		}
+
+
+		console.log($scope.staLED)
 
 		getbtn()
 
@@ -49,22 +55,18 @@ angular.module('app', [])
 			if($scope.time1 == '10:00:00' || $scope.time1 == '23:00:00'){
 				$http.get('/ledOff').then(function (response){
 					console.log(response)
-
 				})
 				$http.get('/pumpOff').then(function (response){
 					console.log(response)
-
 				})
 				console.log("pumpOff")
 				console.log("ledOff")
 			}else if($scope.time1 == '11:00:00 '|| $scope.time1== '00:00:00'){
 				$http.get('/ledOn').then(function (response){
 					console.log(response)
-
 				})
 				$http.get('/pumpOn').then(function (response){
 					console.log(response)
-
 				})
 				console.log("pumpOn")
 				console.log("ledOn")
