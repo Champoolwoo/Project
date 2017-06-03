@@ -138,6 +138,7 @@ angular.module('app', [])
 			console.log("ledOn")
 			$http.put('/btn/' + $scope.totalbtn[0]._id, $scope.stabtn[0]).then(res => {
 		 		$scope.totalbtn[0].statusbtn =  res.data.statusbtn
+		 		console.log(res.data.statusbtn)
 		 	})
 		}
 
@@ -150,6 +151,7 @@ angular.module('app', [])
 			console.log("ledOff")
 			$http.put('/btn/' + $scope.totalbtn[0]._id, $scope.stabtn[0]).then(res => {
 		 		$scope.totalbtn[0].statusbtn =  res.data.statusbtn
+		 		console.log(res.data.statusbtn)
 		 	})
 		}
 
