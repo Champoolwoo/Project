@@ -6,6 +6,8 @@ angular.module('app', [])
 		$scope.item = ''
 		$scope.sheets = []
 		$scope.status = 44
+		$scope.stPump = ''
+		$scope.stLED = ''
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Data Googlesheets
 
@@ -80,6 +82,7 @@ angular.module('app', [])
 		$scope.checkstatus = function(){
 
 			if($scope.staPump == true){
+				$scope.stPump = 'ON'
 				$http.get('/pumpOn').then(function (response){
 				// console.log(response)
 				})
@@ -88,7 +91,9 @@ angular.module('app', [])
 				$http.put('/btn/' + $scope.totalbtn[1]._id, $scope.stabtn[1]).then(res => {
 			 		$scope.totalbtn[1].statusbtn =  res.data.statusbtn
 			 	})
+
 			}else if($scope.staPump == false){
+				$scope.stPump = 'OFF'
 				$http.get('/pumpOff').then(function (response){
 				// console.log(response)
 				})
@@ -100,6 +105,7 @@ angular.module('app', [])
 			}
 
 			if($scope.staLED == true){
+				$scope.stLED = 'ON'
 				$http.get('/ledOn').then(function (response){
 				// console.log(response)
 				})
@@ -109,6 +115,7 @@ angular.module('app', [])
 			 		$scope.totalbtn[0].statusbtn =  res.data.statusbtn
 			 	})
 			}else if($scope.staLED == false){
+				$scope.stLED = 'OFF'
 				$http.get('/ledOff').then(function (response){
 				// console.log(response)
 				})
