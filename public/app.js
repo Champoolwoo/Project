@@ -535,7 +535,7 @@ angular.module('app', [])
 						console.log("sent hole 1 veg 3 update")
 						$scope.totaldatahole[0].statushole =  res.data.status
 					})
-				}else*/ if(veg1 == "4"){
+				}else if(veg1 == "4"){
 					$scope.datahole[0].nameveg = $scope.vegetable[3].namev
 					$scope.datahole[0].typeveg = moment().format("MMM Do YY")
 					$scope.datahole[0].statushole = true
@@ -544,7 +544,7 @@ angular.module('app', [])
 						$scope.totaldatahole[0].statushole =  res.data.status
 					})
 				}//else
-			}else if($scope.datahole[0].statushole === false){
+			}else */if($scope.datahole[0].statushole === false){
 				console.log("hole 1 post")
 				if(veg1 == "1"){
 					$scope.datahole[0].nameveg = $scope.vegetable[0].namev
