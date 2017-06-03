@@ -88,7 +88,7 @@ angular.module('app', [])
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////control
 
-		$scope.checkstatus = function(){
+		// $scope.checkstatus = function(){
 
 			if($scope.staLED === true){
 				$scope.LEDSta = 'ON'
@@ -135,9 +135,9 @@ angular.module('app', [])
 			 	})
 			}
 
-		}//checkstatus
+		//}//checkstatus
 
-		$scope.checkstatus()
+		//$scope.checkstatus()
 
 
 		$scope.ledOn = function(){
