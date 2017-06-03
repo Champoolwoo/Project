@@ -71,7 +71,7 @@ $(document).ready(function(e) {
 
     var statuspump = message.payloadString;
 
-    console.log(message.payloadString);
+    // console.log(message.payloadString);
     if (message.payloadString == "PUMPON" || message.payloadString == "PUMPOFF") {
       $("#pump-on").attr("disabled", (message.payloadString == "PUMPON" ? true : false)/*,$('#st').html("On")*/);
       $("#pump-off").attr("disabled", (message.payloadString == "PUMPOFF" ? true : false)/*,$('#st').html("Off")*/);
