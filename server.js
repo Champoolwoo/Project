@@ -2,13 +2,18 @@ var express = require('express')
 var PyhonShell = require('python-shell')
 var mongoose = require('mongoose')
 var bodyParser = require('body-parser')
+
 var Schema = mongoose.Schema
 var thingSchema = new Schema({}, {strict: false})
 var DateEat = mongoose.model('SmartFarm', thingSchema)
 
 var Schema2 = mongoose.Schema
 var thingSchema2 = new Schema2({}, {strict: false})
-var eventbtn = mongoose.model('event', thingSchema2)////////////////
+var eventbtn = mongoose.model('event', thingSchema2)
+
+var Schema3 = mongoose.Schema
+var thingSchema3 = new Schema3({}, {strict: false})
+var evenhole = mongoose.model('typehole', thingSchema3)
 
 var app = express()
 
@@ -52,7 +57,7 @@ app.get('/takeCam', function(req, res, next){
 	})
 })
 
-//////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////date
 app.post('/dateend', function(req, res){
 	var obj = new DateEat(req.body)
 	obj.save(function(err, obj){
@@ -83,8 +88,42 @@ app.put('/dateend/:id', function (req, res) {
       })
   })
 
-//////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////date
 
+//////////////////////////////////////////////////////////////////////////////////////vegetable
+app.post('/hole', function(req, res){
+	var objhole = new evenhole(req.body)
+	objhole.save(function(err, obj){
+		if(err){
+			return(res.send(err))
+		}else{
+			return(res.send('done'))
+		}
+	})
+})
+
+app.get('/hole', function (req, res) {
+    evenhole.find({})
+    .exec(function (err, done) {
+      if (err) console.log(err)
+      res.send(done)
+    })
+  })
+
+app.put('/hole/:id', function (req, res) {
+    evenhole.findOneAndUpdate(
+      { _id: req.params.id },
+      { $set: {idhole: req.body.idhole, statushole: req.body.statushole, nameveg: req.body.nameveg, typeveg: req.body.typeveg} },
+      { new: true })
+      .exec(function (err, done) {
+        if (err) console.log(err)
+        res.send(done)
+      })
+  })
+
+//////////////////////////////////////////////////////////////////////////////////////vegetable
+
+//////////////////////////////////////////////////////////////////////////////////////btn
 app.post('/btn', function(req, res){
 	var objbtn = new eventbtn(req.body)
 	objbtn.save(function(err, obj){
@@ -114,6 +153,7 @@ app.put('/btn/:id', function (req, res) {
         res.send(done)
       })
   })
+//////////////////////////////////////////////////////////////////////////////////////btn
 
 app.listen(3000)
 console.log('running on port 3000.')

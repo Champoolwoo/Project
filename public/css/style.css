@@ -7,8 +7,8 @@
 
 /*-------------------------------------------------------buttonhole*/
 #buttonhole{
-    width: 80px;
-    height: 80px;
+    width: 75px;
+    height: 75px;
     border-radius:50%;
 }
 /*-------------------------------------------------------buttonhole*/
@@ -21,6 +21,18 @@
   font-color: #2F4F4F;
 }
 
+.btntop{
+  margin-top: 5px;
+  color:  #3c7646;
+  background-color: #d7ecce;
+}
+
+.typeveg{
+  color: #3c7646;
+  text-align: center;
+  background-color:#d7ecce ;
+
+}
 
 
 /*-------------------------------------------------------Switch*/
