@@ -18,7 +18,7 @@ angular.module('app', [])
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////time
 
-		/*$scope.stabtn = [{
+		$scope.stabtn = [{
 				btnnum: 1,
 				statusbtn: false
 			},{
@@ -39,15 +39,15 @@ angular.module('app', [])
 		}
 
 
-		console.log($scope.staLED)
+		// console.log($scope.staLED)
 
-		getbtn()*/
+		getbtn()
 
 		// var indexbtn =  $scope.stabtn.findIndex(i => i.btnnum === btnnum)
 		//  	$scope.stabtn[indexbtn].status = true
 		//  	$http.post('/ิbtn', $scope.btnnum[indexbtn]).then(function (response){})
 
-		setInterval(function(){
+
 			var d = new Date()
 			$scope.time1 = d.toLocaleTimeString()
 			// console.log($scope.time1)
@@ -72,7 +72,7 @@ angular.module('app', [])
 				console.log("ledOn")
 			}
 
-		}, 1000);
+
 
 
 
@@ -85,11 +85,11 @@ angular.module('app', [])
 			// 	console.log(response)
 			// })
 			$scope.stabtn[0].statusbtn = true///////////////////////////////
-			// $http.post('/btn', $scope.stabtn[0]).then(function (response){})///////////////////////////////
+			$http.post('/btn', $scope.stabtn[0]).then(function (response){})///////////////////////////////
 			console.log("ledOn")
-			$http.put('/btn/' + $scope.totalbtn[0]._id, $scope.stabtn[0]).then(res => {
-		 		$scope.totalbtn[0].statusbtn =  res.data.statusbtn
-		 	})
+			// $http.put('/btn/' + $scope.totalbtn[0]._id, $scope.stabtn[0]).then(res => {
+		 // 		$scope.totalbtn[0].statusbtn =  res.data.statusbtn
+		 // 	})
 		}
 
 		$scope.ledOff = function(){
@@ -97,11 +97,11 @@ angular.module('app', [])
 			// 	console.log(response)
 			// })
 			$scope.stabtn[0].statusbtn = false///////////////////////////////
-			// $http.post('/btn', $scope.stabtn[0]).then(function (response){})///////////////////////////////
+			$http.post('/btn', $scope.stabtn[0]).then(function (response){})///////////////////////////////
 			console.log("ledOff")
-			$http.put('/btn/' + $scope.totalbtn[0]._id, $scope.stabtn[0]).then(res => {
-		 		$scope.totalbtn[0].statusbtn =  res.data.statusbtn
-		 	})
+			// $http.put('/btn/' + $scope.totalbtn[0]._id, $scope.stabtn[0]).then(res => {
+		 // 		$scope.totalbtn[0].statusbtn =  res.data.statusbtn
+		 // 	})
 		}
 
 		$scope.pumpOn = function(){
@@ -109,11 +109,11 @@ angular.module('app', [])
 			// 	console.log(response)
 			// })
 			$scope.stabtn[1].statusbtn = true///////////////////////////////
-			// $http.post('/btn', $scope.stabtn[1]).then(function (response){})///////////////////////////////
+			$http.post('/btn', $scope.stabtn[1]).then(function (response){})///////////////////////////////
 			console.log("pumpOn")
-			$http.put('/btn/' + $scope.totalbtn[1]._id, $scope.stabtn[1]).then(res => {
-		 		$scope.totalbtn[1].statusbtn =  res.data.statusbtn
-		 	})
+			// $http.put('/btn/' + $scope.totalbtn[1]._id, $scope.stabtn[1]).then(res => {
+		 // 		$scope.totalbtn[1].statusbtn =  res.data.statusbtn
+		 // 	})
 		}
 
 		$scope.pumpOff = function(){
@@ -121,11 +121,11 @@ angular.module('app', [])
 			// 	console.log(response)
 			// })
 			$scope.stabtn[1].statusbtn = false///////////////////////////////
-			// $http.post('/btn', $scope.stabtn[1]).then(function (response){})///////////////////////////////
+			$http.post('/btn', $scope.stabtn[1]).then(function (response){})///////////////////////////////
 			console.log("pumpOff")
-			$http.put('/btn/' + $scope.totalbtn[1]._id, $scope.stabtn[1]).then(res => {
-		 		$scope.totalbtn[1].statusbtn =  res.data.statusbtn
-		 	})
+			// $http.put('/btn/' + $scope.totalbtn[1]._id, $scope.stabtn[1]).then(res => {
+		 // 		$scope.totalbtn[1].statusbtn =  res.data.statusbtn
+		 // 	})
 		}
 
 		$scope.takeCam = function(){
