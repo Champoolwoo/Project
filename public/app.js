@@ -28,13 +28,15 @@ angular.module('app', [])
 		]
 
 		$scope.totalbtn = []
+		$scope.pumpSta = ''
+		$scope.LEDSta = ''
 
 		function getbtn () {
 			$http.get('/btn').then(res => {
 				$scope.totalbtn = res.data
 				$scope.staLED = res.data[0].statusbtn
 				$scope.staPump = res.data[1].statusbtn
-				console.log($scope.staLED)
+				// console.log($scope.staLED)
 			})
 		}
 
@@ -44,23 +46,40 @@ angular.module('app', [])
 			$scope.time1 = d.toLocaleTimeString()
 			// console.log($scope.time1)
 
-			if($scope.time1 == '18:00:00' || $scope.time1 == '06:00:00'){
+			if($scope.time1 > '18:00:00' || $scope.time1 < '06:00:00'){
+				$scope.LEDSta = 'ON'
 				$http.get('/ledOn').then(function (response){
 					// console.log(response)
 				})
-				// $http.get('/pumpOff').then(function (response){
-				// 	// console.log(response)
-				// })
-				// console.log("pumpOff")
+				// if($scope.staLED === false){
+				// 	$scope.LEDSta = 'OFF'
+				// 	$http.get('/ledOff').then(function (response){
+				// 		// console.log(response)
+				// 	})
+				// }
+				// if($scope.staLED === true){
+				// 	$scope.LEDSta = 'ON'
+				// 	$http.get('/ledOn').then(function (response){
+				// 		// console.log(response)
+				// 	})
+				// }
 				console.log("ledOn")
-			}else if($scope.time1 >= '06:00:00 '|| $scope.time1 >= '18:00:00'){
+
+			}else if($scope.time1 >= '06:00:00 '|| $scope.time1 <= '18:00:00'){
+				$scope.LEDSta = 'OFF'
 				$http.get('/ledOff').then(function (response){
 					// console.log(response)
 				})
-				// $http.get('/pumpOn').then(function (response){
-				// 	// console.log(response)
-				// })
-				// console.log("pumpOn")
+				// if($scope.staLED === false){
+				// 	$http.get('/ledOff').then(function (response){
+				// 		// console.log(response)
+				// 	})
+				// }
+				// if($scope.staLED === true){
+				// 	$http.get('/ledOn').then(function (response){
+				// 		// console.log(response)
+				// 	})
+				// }
 				console.log("ledOff")
 			}
 
@@ -72,6 +91,7 @@ angular.module('app', [])
 		$scope.checkstatus = function(){
 
 			if($scope.staLED === true){
+				$scope.LEDSta = 'ON'
 				$http.get('/ledOn').then(function (response){
 				// console.log(response)
 				})
@@ -81,6 +101,7 @@ angular.module('app', [])
 			 		$scope.totalbtn[0].statusbtn =  res.data.statusbtn
 			 	})
 			}else if($scope.staLED === false){
+				$scope.LEDSta = 'ON'
 				$http.get('/ledOff').then(function (response){
 				// console.log(response)
 				})
@@ -92,6 +113,7 @@ angular.module('app', [])
 			}
 
 			if($scope.staPump === true){
+				$scope.LEDSta = 'ON'
 				$http.get('/pumpOn').then(function (response){
 				// console.log(response)
 				})
@@ -102,6 +124,7 @@ angular.module('app', [])
 			 	})
 
 			}else if($scope.staPump === false){
+				$scope.LEDSta = 'OFF'
 				$http.get('/pumpOff').then(function (response){
 				// console.log(response)
 				})
@@ -112,7 +135,7 @@ angular.module('app', [])
 			 	})
 			}
 
-			
+
 
 		}//checkstatus
 

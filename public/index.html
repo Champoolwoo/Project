@@ -159,8 +159,8 @@ var mqttSend = function(topic, msg) {
 			<div class="col-md-4"></div>
 			<div class="col-md-5">
 			<h3>Control LED</h3>
-			<p class="bg-info" ng-if="staLED === true">Status : ON </p>
-			<p class="bg-danger" ng-if="stLED === false">Status : OFF</p>
+			<p class="bg-info">Status : ON </p>
+			
 			<!-- <h2>Control LED</h2>
 			  <button id="led-on" >&nbsp;OFF LED&nbsp;</button>&nbsp;&nbsp;&nbsp;
 			  <button id="led-off" disabled>&nbsp;ON LED&nbsp;</button>
@@ -182,8 +182,8 @@ var mqttSend = function(topic, msg) {
 			<div class="col-md-4"></div>
 			<div class="col-md-5">
 			<h3>Control Water Pump</h3>
-			<p class="bg-info" ng-if="staPump === true">Status : ON </p>
-			<p class="bg-danger" ng-if="staPump === false">Status : OFF</p>
+			<p class="bg-info">Status : ON </p>
+			
 
 				<button id="pump-on" class="btn btn-primary btn-lg active" ng-click="pumpOff()" >Off</button>
 			 	<button id="pump-off" class="btn btn-primary btn-lg active" ng-click="pumpOn()" disabled>On</button>
