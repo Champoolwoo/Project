@@ -53,23 +53,23 @@ angular.module('app', [])
 			// console.log($scope.time1)
 
 			if($scope.time1 == '18:00:00' || $scope.time1 == '06:00:00'){
-				$http.get('/ledOn').then(function (response){
+				$http.get('/ledOff').then(function (response){
 					// console.log(response)
 				})
 				// $http.get('/pumpOff').then(function (response){
 				// 	// console.log(response)
 				// })
 				// console.log("pumpOff")
-				console.log("ledOn")
+				console.log("ledOff")
 			}else if($scope.time1 >= '06:00:00 '|| $scope.time1 >= '18:00:00'){
-				$http.get('/ledOff').then(function (response){
+				$http.get('/ledOn').then(function (response){
 					// console.log(response)
 				})
 				// $http.get('/pumpOn').then(function (response){
 				// 	// console.log(response)
 				// })
 				// console.log("pumpOn")
-				console.log("ledOff")
+				console.log("ledOn")
 			}
 
 
