@@ -509,7 +509,7 @@ angular.module('app', [])
 		$scope.hole1 = function(veg1){//////////////////////////////////////////////////hole1
 			console.log("OK Hole ------->1")
 
-			if($scope.totaldatahole[0].statushole === true){
+			/*if($scope.totaldatahole[0].statushole === true){
 				console.log("hole 1 put")
 				if(veg1 == "1"){
 					$scope.datahole[0].nameveg = $scope.vegetable[0].namev
@@ -535,7 +535,7 @@ angular.module('app', [])
 						console.log("sent hole 1 veg 3 update")
 						$scope.totaldatahole[0].statushole =  res.data.status
 					})
-				}else if(veg1 == "4"){
+				}else*/ if(veg1 == "4"){
 					$scope.datahole[0].nameveg = $scope.vegetable[3].namev
 					$scope.datahole[0].typeveg = moment().format("MMM Do YY")
 					$scope.datahole[0].statushole = true
@@ -550,35 +550,35 @@ angular.module('app', [])
 					$scope.datahole[0].nameveg = $scope.vegetable[0].namev
 					$scope.datahole[0].typeveg = moment().format("MMM Do YY")
 					$scope.datahole[0].statushole = true
-					// $http.post('/hole', $scope.datahole[0]).then(function (response){
-					// 	console.log("sent hole 1 veg 1")
-					// })
+					$http.post('/hole', $scope.datahole[0]).then(function (response){
+						console.log("sent hole 1 veg 1")
+					})
 				}else if(veg1 == "2"){
 					$scope.datahole[0].nameveg = $scope.vegetable[1].namev
 					$scope.datahole[0].typeveg = moment().format("MMM Do YY")
 					$scope.datahole[0].statushole = true
-					// $http.post('/hole', $scope.datahole[0]).then(function (response){
-					// 	console.log("sent hole 1 veg 2")
-					// })
+					$http.post('/hole', $scope.datahole[0]).then(function (response){
+						console.log("sent hole 1 veg 2")
+					})
 				}else if(veg1 == "3"){
 					$scope.datahole[0].nameveg = $scope.vegetable[2].namev
 					$scope.datahole[0].typeveg = moment().format("MMM Do YY")
 					$scope.datahole[0].statushole = true
-					// $http.post('/hole', $scope.datahole[0]).then(function (response){
-					// 	console.log("sent hole 1 veg 3")
-					// })
+					$http.post('/hole', $scope.datahole[0]).then(function (response){
+						console.log("sent hole 1 veg 3")
+					})
 				}else if(veg1 == "4"){
 					$scope.datahole[0].nameveg = $scope.vegetable[3].namev
 					$scope.datahole[0].typeveg = moment().format("MMM Do YY")
 					$scope.datahole[0].statushole = true
-					// $http.post('/hole', $scope.datahole[0]).then(function (response){
-					// 	console.log("sent hole 1 veg 4")
-					// })
+					$http.post('/hole', $scope.datahole[0]).then(function (response){
+						console.log("sent hole 1 veg 4")
+					})
 				}//else
 			}
 		}//function hole1
 
-		$scope.hole2 = function(veg2){//////////////////////////////////////////////////hole2
+		/*$scope.hole2 = function(veg2){//////////////////////////////////////////////////hole2
 			console.log("OK Hole ------->2")
 
 			if($scope.totaldatahole[1].statushole === true){
@@ -3169,7 +3169,7 @@ angular.module('app', [])
 					}//else
 				}
 			}//function hole36
-
+*/
 
 
 		}, 1000);
