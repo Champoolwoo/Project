@@ -141,6 +141,7 @@ angular.module('app', [])
 
 
 		$scope.ledOn = function(){
+			$scope.LEDSta = 'ON'
 			$http.get('/ledOn').then(function (response){
 				// console.log(response)
 			})
@@ -154,6 +155,7 @@ angular.module('app', [])
 		}
 
 		$scope.ledOff = function(){
+			$scope.LEDSta = 'OFF'
 			$http.get('/ledOff').then(function (response){
 				// console.log(response)
 			})
@@ -167,6 +169,7 @@ angular.module('app', [])
 		}
 
 		$scope.pumpOn = function(){
+			$scope.pumpSta = 'ON'
 			$http.get('/pumpOn').then(function (response){
 				// console.log(response)
 			})
@@ -179,6 +182,7 @@ angular.module('app', [])
 		}
 
 		$scope.pumpOff = function(){
+			$scope.pumpSta = 'OFF'
 			$http.get('/pumpOff').then(function (response){
 				// console.log(response)
 			})

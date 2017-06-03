@@ -159,7 +159,7 @@ var mqttSend = function(topic, msg) {
 			<div class="col-md-4"></div>
 			<div class="col-md-5">
 			<h3>Control LED</h3>
-			<p class="bg-info">Status : ON </p>
+			<p class="bg-info">Status : {{LEDSta}} </p>
 			
 			<!-- <h2>Control LED</h2>
 			  <button id="led-on" >&nbsp;OFF LED&nbsp;</button>&nbsp;&nbsp;&nbsp;
@@ -182,7 +182,7 @@ var mqttSend = function(topic, msg) {
 			<div class="col-md-4"></div>
 			<div class="col-md-5">
 			<h3>Control Water Pump</h3>
-			<p class="bg-info">Status : ON </p>
+			<p class="bg-info">Status : {{pumpSta}} </p>
 			
 
 				<button id="pump-on" class="btn btn-primary btn-lg active" ng-click="pumpOff()" >Off</button>
