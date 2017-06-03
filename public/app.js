@@ -509,7 +509,7 @@ angular.module('app', [])
 		$scope.hole1 = function(veg1){//////////////////////////////////////////////////hole1
 			console.log("OK Hole ------->1")
 
-			/*if($scope.totaldatahole[0].statushole === true){
+			if($scope.totaldatahole[0].statushole === true){
 				console.log("hole 1 put")
 				if(veg1 == "1"){
 					$scope.datahole[0].nameveg = $scope.vegetable[0].namev
@@ -544,7 +544,7 @@ angular.module('app', [])
 						$scope.totaldatahole[0].statushole =  res.data.status
 					})
 				}//else
-			}else */if($scope.datahole[0].statushole === false){
+			}else if($scope.datahole[0].statushole === false){
 				console.log("hole 1 post")
 				if(veg1 == "1"){
 					$scope.datahole[0].nameveg = $scope.vegetable[0].namev
@@ -578,7 +578,7 @@ angular.module('app', [])
 			}
 		}//function hole1
 
-		/*$scope.hole2 = function(veg2){//////////////////////////////////////////////////hole2
+		$scope.hole2 = function(veg2){//////////////////////////////////////////////////hole2
 			console.log("OK Hole ------->2")
 
 			if($scope.totaldatahole[1].statushole === true){
@@ -3169,7 +3169,7 @@ angular.module('app', [])
 					}//else
 				}
 			}//function hole36
-*/
+
 
 
 		}, 1000);
