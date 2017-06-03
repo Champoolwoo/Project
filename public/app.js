@@ -135,9 +135,9 @@ angular.module('app', [])
 			 	})
 			}
 
-
-
 		}//checkstatus
+
+		$scope.checkstatus()
 
 
 		$scope.ledOn = function(){
