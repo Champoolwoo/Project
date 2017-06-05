@@ -30,95 +30,95 @@
 
 </head>
 <script>
-/*
-var config = {
-  mqtt_server: "m10.cloudmqtt.com",
-  mqtt_websockets_port: 39505,
-  mqtt_user: "Test",
-  mqtt_password: "1234"
-};
 
-$(document).ready(function(e) {
+// var config = {
+//   mqtt_server: "m10.cloudmqtt.com",
+//   mqtt_websockets_port: 39505,
+//   mqtt_user: "Test",
+//   mqtt_password: "1234"
+// };
 
-  client = new Paho.MQTT.Client(config.mqtt_server, config.mqtt_websockets_port, "web_" + parseInt(Math.random() * 100, 10));
+// $(document).ready(function(e) {
 
-  client.connect({
-    useSSL: true,
-    userName: config.mqtt_user,
-    password: config.mqtt_password,
-    onSuccess: function() {
+//   client = new Paho.MQTT.Client(config.mqtt_server, config.mqtt_websockets_port, "web_" + parseInt(Math.random() * 100, 10));
 
-      $("#status").text("Connected").removeClass().addClass("connected");
-      client.subscribe("/ESP/PUMP");
-      mqttSend("/ESP/PUMP", "GET");
-      client.subscribe("/ESP/LED");
-      mqttSend("/ESP/LED", "GET");
-    },
-    onFailure: function(e) {
-      $("#status").text("Error : " + e).removeClass().addClass("error");
+//   client.connect({
+//     useSSL: true,
+//     userName: config.mqtt_user,
+//     password: config.mqtt_password,
+//     onSuccess: function() {
 
-    }
-  });
+//       $("#status").text("Connected").removeClass().addClass("connected");
+//       client.subscribe("/ESP/PUMP");
+//       mqttSend("/ESP/PUMP", "GET");
+//       client.subscribe("/ESP/LED");
+//       mqttSend("/ESP/LED", "GET");
+//     },
+//     onFailure: function(e) {
+//       $("#status").text("Error : " + e).removeClass().addClass("error");
 
-  client.onConnectionLost = function(responseObject) {
-    if (responseObject.errorCode !== 0) {
-      $("#status").text("onConnectionLost:" + responseObject.errorMessage).removeClass().addClass("connect");
-      setTimeout(function() { client.connect() }, 1000);
-    }
-  }
+//     }
+//   });
 
-  client.onMessageArrived = function(message) {
+//   client.onConnectionLost = function(responseObject) {
+//     if (responseObject.errorCode !== 0) {
+//       $("#status").text("onConnectionLost:" + responseObject.errorMessage).removeClass().addClass("connect");
+//       setTimeout(function() { client.connect() }, 1000);
+//     }
+//   }
 
-    var statuspump = message.payloadString;
+//   client.onMessageArrived = function(message) {
 
-    // console.log(message.payloadString);
-    if (message.payloadString == "PUMPON" || message.payloadString == "PUMPOFF") {
-      $("#pump-on").attr("disabled", (message.payloadString == "PUMPON" ? true : false)/*,$('#st').html("On")*/);
-      $("#pump-off").attr("disabled", (message.payloadString == "PUMPOFF" ? true : false)/*,$('#st').html("Off")*/);
+//     var statuspump = message.payloadString;
 
-      if(message.payloadString == "PUMPON"){
-        $('#stpump').html("Off");
-      }else if(message.payloadString == "PUMPOFF"){
-        $('#stpump').html("On");
-      }
-    }
+//     // console.log(message.payloadString);
+//     if (message.payloadString == "PUMPON" || message.payloadString == "PUMPOFF") {
+//       $("#pump-on").attr("disabled", (message.payloadString == "PUMPON" ? true : false)/*,$('#st').html("On")*/);
+//       $("#pump-off").attr("disabled", (message.payloadString == "PUMPOFF" ? true : false)/*,$('#st').html("Off")*/);
 
-    if (message.payloadString == "LEDON" || message.payloadString == "LEDOFF") {
-      $("#led-on").attr("disabled", (message.payloadString == "LEDON" ? true : false)/*,$('#st').html("On")*/);
-      $("#led-off").attr("disabled", (message.payloadString == "LEDOFF" ? true : false)/*,$('#st').html("Off")*/);
+//       if(message.payloadString == "PUMPON"){
+//         $('#stpump').html("Off");
+//       }else if(message.payloadString == "PUMPOFF"){
+//         $('#stpump').html("On");
+//       }
+//     }
 
-      if(message.payloadString == "LEDON"){
-        $('#stled').html("Off");
-      }else if(message.payloadString == "PUMPOFF"){
-        $('#stled').html("On");
-      }
-    }
-  }
+//     if (message.payloadString == "LEDON" || message.payloadString == "LEDOFF") {
+//       $("#led-on").attr("disabled", (message.payloadString == "LEDON" ? true : false)/*,$('#st').html("On")*/);
+//       $("#led-off").attr("disabled", (message.payloadString == "LEDOFF" ? true : false)/*,$('#st').html("Off")*/);
 
-  $("#pump-on").click(function(e) {
-        mqttSend("/ESP/PUMP", "PUMPON");
-    });
+//       if(message.payloadString == "LEDON"){
+//         $('#stled').html("Off");
+//       }else if(message.payloadString == "PUMPOFF"){
+//         $('#stled').html("On");
+//       }
+//     }
+//   }
 
-  $("#pump-off").click(function(e) {
-        mqttSend("/ESP/PUMP", "PUMPOFF");
-    });
+//   $("#pump-on").click(function(e) {
+//         mqttSend("/ESP/PUMP", "PUMPON");
+//     });
 
-  $("#led-on").click(function(e) {
-        mqttSend("/ESP/LED", "LEDON");
-    });
+//   $("#pump-off").click(function(e) {
+//         mqttSend("/ESP/PUMP", "PUMPOFF");
+//     });
 
-  $("#led-off").click(function(e) {
-        mqttSend("/ESP/LED", "LEDOFF");
-    });
+//   $("#led-on").click(function(e) {
+//         mqttSend("/ESP/LED", "LEDON");
+//     });
+
+//   $("#led-off").click(function(e) {
+//         mqttSend("/ESP/LED", "LEDOFF");
+//     });
 
 
-});
+// });
 
-var mqttSend = function(topic, msg) {
-  var message = new Paho.MQTT.Message(msg);
-  message.destinationName = topic;
-  client.send(message);
-}*/
+// var mqttSend = function(topic, msg) {
+//   var message = new Paho.MQTT.Message(msg);
+//   message.destinationName = topic;
+//   client.send(message);
+// }
 
 </script>
 <body ng-controller="TodoListController">
