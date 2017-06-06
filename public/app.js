@@ -44,9 +44,9 @@ angular.module('app', [])
 		getbtn()
 
 			if($scope.staPump === true){
-				$scope.LEDSta = 'ON'
+				$scope.pumpSta = 'ON'
 			}else if($scope.staPump === false){
-				$scope.LEDSta = 'OFF'
+				$scope.pumpSta = 'OFF'
 			}
 
 			var d = new Date()
@@ -120,7 +120,7 @@ angular.module('app', [])
 			}
 
 			if($scope.staPump === true){
-				$scope.LEDSta = 'ON'
+				$scope.pumpSta = 'ON'
 				$http.get('/pumpOn').then(function (response){
 				// console.log(response)
 				})
@@ -131,7 +131,7 @@ angular.module('app', [])
 			 	})
 
 			}else if($scope.staPump === false){
-				$scope.LEDSta = 'OFF'
+				$scope.pumpSta = 'OFF'
 				$http.get('/pumpOff').then(function (response){
 				// console.log(response)
 				})
