@@ -37,12 +37,12 @@ angular.module('app', [])
 				$scope.totalbtn = res.data
 				$scope.staLED = res.data[0].statusbtn
 				$scope.staPump = res.data[1].statusbtn
-				// console.log($scope.staLED)
+				console.log($scope.staPump)
 			})
 		}
 
 		getbtn()
-		
+
 			if($scope.staPump === true){
 				$scope.LEDSta = 'ON'
 			}else if($scope.staPump === false){
