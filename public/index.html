@@ -73,8 +73,8 @@ $(document).ready(function(e) {
 
     // console.log(message.payloadString);
     if (message.payloadString == "PUMPON" || message.payloadString == "PUMPOFF") {
-      $("#pump-on").attr("disabled", (message.payloadString == "PUMPON" ? true : false)/*,$('#st').html("On")*/);
-      $("#pump-off").attr("disabled", (message.payloadString == "PUMPOFF" ? true : false)/*,$('#st').html("Off")*/);
+      $("#pump-on").attr( (message.payloadString == "PUMPON" ? true : false)/*,$('#st').html("On")*/);
+      $("#pump-off").attr( (message.payloadString == "PUMPOFF" ? true : false)/*,$('#st').html("Off")*/);
 
       if(message.payloadString == "PUMPON"){
         $('#stpump').html("Off");
@@ -84,9 +84,9 @@ $(document).ready(function(e) {
     }
 
     if (message.payloadString == "LEDON" || message.payloadString == "LEDOFF") {
-      $("#led-on").attr("disabled", (message.payloadString == "LEDON" ? true : false)/*,$('#st').html("On")*/);
-      $("#led-off").attr("disabled", (message.payloadString == "LEDOFF" ? true : false)/*,$('#st').html("Off")*/);
-
+      $("#led-on").attr( (message.payloadString == "LEDON" ? true : false)/*,$('#st').html("On")*/);
+      $("#led-off").attr( (message.payloadString == "LEDOFF" ? true : false)/*,$('#st').html("Off")*/);
+// "disabled",
       if(message.payloadString == "LEDON"){
         $('#stled').html("Off");
       }else if(message.payloadString == "PUMPOFF"){
