@@ -42,6 +42,12 @@ angular.module('app', [])
 		}
 
 		getbtn()
+		
+			if($scope.staPump === true){
+				$scope.LEDSta = 'ON'
+			}else if($scope.staPump === false){
+				$scope.LEDSta = 'OFF'
+			}
 
 			var d = new Date()
 			$scope.time1 = d.toLocaleTimeString()
