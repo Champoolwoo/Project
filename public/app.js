@@ -43,10 +43,10 @@ angular.module('app', [])
 
 		getbtn()
 
-			if($scope.staPump === true){
+			if($scope.staPump == true){
 				$scope.pumpSta = 'ON'
 				console.log("chcek")
-			}else if($scope.staPump === false){
+			}else if($scope.staPump == false){
 				$scope.pumpSta = 'OFF'
 				console.log("chcek")
 			}
