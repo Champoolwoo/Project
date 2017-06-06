@@ -29,7 +29,7 @@ angular.module('app', [])
 		]
 
 		$scope.totalbtn = []
-		$scope.pumpSta = ''
+		// $scope.pumpSta = ''
 		$scope.LEDSta = ''
 
 		function getbtn () {
