@@ -38,18 +38,19 @@ angular.module('app', [])
 				$scope.staLED = res.data[0].statusbtn
 				$scope.staPump = res.data[1].statusbtn
 				console.log($scope.staPump)
-			})
-		}
-
-		getbtn()
-
-			if($scope.staPump == true){
+				if($scope.staPump == true){
 				$scope.pumpSta = 'ON'
 				console.log("chcek")
 			}else if($scope.staPump == false){
 				$scope.pumpSta = 'OFF'
 				console.log("chcek")
 			}
+			})
+		}
+
+		getbtn()
+
+			
 
 			var d = new Date()
 			$scope.time1 = d.toLocaleTimeString()
