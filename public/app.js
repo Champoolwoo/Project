@@ -209,7 +209,7 @@ angular.module('app', [])
 				console.log(response)
 				setTimeout(function () {
         				window.location = 'picture.html'
-     				 }, 3000)
+     		}, 3000)
 			})
 			console.log("Take Photo")
 		}
