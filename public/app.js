@@ -50,8 +50,6 @@ angular.module('app', [])
 
 		getbtn()
 
-			
-
 			var d = new Date()
 			$scope.time1 = d.toLocaleTimeString()
 			// console.log($scope.time1)
@@ -571,12 +569,12 @@ angular.module('app', [])
 				$scope.holeveg29 = res.data[28].nameveg
 				$scope.holeveg30 = res.data[29].nameveg
 
-				$scope.holeveg31 = res.data[30].nameveg
+				/*$scope.holeveg31 = res.data[30].nameveg
 				$scope.holeveg32 = res.data[31].nameveg
 				$scope.holeveg33 = res.data[32].nameveg
 				$scope.holeveg34 = res.data[33].nameveg
 				$scope.holeveg35 = res.data[34].nameveg
-				$scope.holeveg36 = res.data[35].nameveg
+				$scope.holeveg36 = res.data[35].nameveg*/
 			})
 		}
 

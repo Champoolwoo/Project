@@ -23,13 +23,16 @@
 	<!-- Moment time -->
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
 
+	<!-- Microgear -->
+	<script src="https://cdn.netpie.io/microgear.js"></script>
+
 	<!-- Compiled and minified CSS -->
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css"> -->
   <!-- Compiled and minified JavaScript -->
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script> -->
 
 </head>
-<script>
+<!-- <script>
 
 var config = {
   mqtt_server: "m10.cloudmqtt.com",
@@ -120,6 +123,59 @@ var mqttSend = function(topic, msg) {
   client.send(message);
 }
 
+</script> -->
+
+<script>
+
+  const APPID = "APPID";
+  const KEY = "oT7qT5XkIuSyvDb";
+  const SECRET = "6IMFn3bZrNlVEopa0BWlhszUa";
+
+  const ALIAS = "DigitalOUTPUT_HTML_web";     //  ชื่อตัวเอง
+  const thing1 = "NodeMCU1";                                   //  ชื่อเพื่อนที่จะคุย
+
+  function switchPress(logic){
+    if(logic == 1 ){
+      microgear.chat(thing1,"ON");
+      console.log("On")
+    }else if(logic == 0 ){
+      microgear.chat(thing1,"OFF");
+      console.log("Off")
+    }
+  }
+
+  var microgear = Microgear.create({
+    key: KEY,
+    secret: SECRET,
+    alias : ALIAS
+  });
+
+
+  microgear.on('message', function(topic,data) {
+    if(data=="ON"){
+      document.getElementById("Status").innerHTML =  "Load is ON.";
+    }else if(data=="OFF"){
+      document.getElementById("Status").innerHTML =  "Load is OFF.";
+    }
+  });
+
+  microgear.on('connected', function() {
+    microgear.setAlias(ALIAS);
+    document.getElementById("connected_NETPIE").innerHTML = "Connected to NETPIE"
+  });
+
+  microgear.on('present', function(event) {
+    console.log(event);
+  });
+
+  microgear.on('absent', function(event) {
+    console.log(event);
+  });
+
+  microgear.resettoken(function(err) {
+    microgear.connect(APPID);
+  });
+
 </script>
 <body ng-controller="TodoListController">
 <!-- body////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
@@ -149,6 +205,14 @@ var mqttSend = function(topic, msg) {
 
 
 	<div class="container">
+
+	<center>
+	  <h1 id="connected_NETPIE"></h1>
+	  <button type="button" onclick="switchPress(1)">Chcek</button>
+	  <!-- <button type="button" onclick="switchPress(0)">Turn OFF</button> -->
+	  <p><strong id="Status">Load is OFF.</strong></p>
+	</center>
+	
 		<center>
 		<h1>Control</h1>
 	  <p>Control LED Grow Light And Control Water pump</p>
@@ -160,7 +224,7 @@ var mqttSend = function(topic, msg) {
 			<div class="col-md-5">
 			<h3>Control LED Status : {{LEDSta}} </h3>
 			<!-- <p class="bg-info">Status : {{LEDSta}} </p> -->
-			
+
 			<!-- <h2>Control LED</h2>
 			  <button id="led-on" >&nbsp;OFF LED&nbsp;</button>&nbsp;&nbsp;&nbsp;
 			  <button id="led-off" disabled>&nbsp;ON LED&nbsp;</button>
@@ -183,7 +247,7 @@ var mqttSend = function(topic, msg) {
 			<div class="col-md-5">
 			<h3>Control Water Pump Status : {{pumpSta}} </h3>
 			<!-- <p class="bg-info">Status : {{pumpSta}} </p> -->
-			
+
 
 				<button id="pump-on" class="btn btn-primary btn-lg active" ng-click="pumpOff()" >Off</button>
 			 	<button id="pump-off" class="btn btn-primary btn-lg active" ng-click="pumpOn()" >On</button>
