@@ -214,7 +214,7 @@ var mqttSend = function(topic, msg) {
 	<!-- </center> -->
 
 		<center>
-		<h1>Control</h1>
+		<h1>Smart Farm Vegetable</h1>
 	  <p>Control LED Grow Light And Control Water pump</p>
 	  </center>
 	  <hr width="50%">
@@ -231,8 +231,8 @@ var mqttSend = function(topic, msg) {
 			  <button id="led-off" disabled>&nbsp;ON LED&nbsp;</button>
 			<h2>Status LED : <span id="stled"></span></h2> -->
 
-			 <button id="led-on" class="btn btn-primary btn-lg active" ng-click="ledOff()">Off</button>
-			 <button id="led-off" class="btn btn-primary btn-lg active" ng-click="ledOn()">On</button>
+			 <button id="led-on" class="btn btn-danger btn-lg active" ng-click="ledOff()">Off</button>
+			 <button id="led-off" class="btn btn-success btn-lg active" ng-click="ledOn()">On</button>
 
 				<!-- <div class="holder">
 					<input type="checkbox" value="true" id="check" name="check" ng-click="controlSwitch()" class="check-ios" ng-model="conLED"/>
@@ -252,8 +252,8 @@ var mqttSend = function(topic, msg) {
 			<!-- <p class="bg-info">Status : {{pumpSta}} </p> -->
 
 
-				<button id="pump-on" class="btn btn-primary btn-lg active" ng-click="pumpOff()" >Off</button>
-			 	<button id="pump-off" class="btn btn-primary btn-lg active" ng-click="pumpOn()" >On</button>
+				<button id="pump-on" class="btn btn-danger btn-lg active" ng-click="pumpOff()" >Off</button>
+			 	<button id="pump-off" class="btn btn-success btn-lg active" ng-click="pumpOn()" >On</button>
 				<!-- <div class="holder">
 					<input type="checkbox" value="true" id="check2" name="check2" class="check-ios2" ng-click="controlSwitch()" ng-model="conPump"/>
 					<label for="check2"></label>
@@ -270,7 +270,7 @@ var mqttSend = function(topic, msg) {
 			<center>
 			<h3>Check</h3>
 			<p>Sent values to Google Sheets</p>
-			  <h1 id="connected_NETPIE"></h1>
+			  <h3 id="connected_NETPIE"></h3>
 			  <button type="button" onclick="switchPress(1)" class="btn btn-primary btn-lg active">Chcek</button>
 			  <!-- <button type="button" onclick="switchPress(0)">Turn OFF</button> -->
 			  <!-- <p><strong id="Status">Load is OFF.</strong></p> -->
@@ -288,7 +288,8 @@ var mqttSend = function(topic, msg) {
 		<div class="container">
 			<div class="col-xs-4"></div>
 		  <div class="col-xs-1"><img src="icon/calendar.png" width="50px"  class="icon"></div>
-		  <div class="col-xs-7"><h3>Date : {{items.Date}}</h3></div>
+		  <!-- <div class="col-xs-7"><h3><div style="float:left;">Date :&nbsp;</div><div style="float:left;">{{items.Date}}</div></h3></div> -->
+		  <div class="col-xs-7"><h3><div style="float:left;">Date :&nbsp;</div><div style="float:left;">{{items.Date}}</div></h3></div>
 	  </div>
 	</div>
 <br>
@@ -296,7 +297,14 @@ var mqttSend = function(topic, msg) {
 		<div class="container">
 			<div class="col-xs-4"></div>
 		  <div class="col-xs-1"><img src="icon/humidity.png" width="50px" class="icon"></div>
-		  <div class="col-xs-7"><h3>Humidity : {{items.Humidity}}</h3></div>
+		  <div class="col-xs-7">
+		  	<h3>
+		  		<div style="float:left;">Humidity :&nbsp;</div>
+		  		<div style="float:left; color: red" ng-if="items.Humidity >= 70" >{{items.Humidity}}</div>
+		  		<div style="float:left; color: green" ng-if="items.Humidity < 70" >{{items.Humidity}}</div>
+		  	</h3>
+		 	</div>
+		  <!-- <div class="col-xs-7"><h3>Humidity : {{items.Humidity}}</h3></div> -->
 	  </div>
 	</div>
 <br>
@@ -304,7 +312,14 @@ var mqttSend = function(topic, msg) {
 		<div class="container">
 			<div class="col-xs-4"></div>
 		  <div class="col-xs-1"><img src="icon/temperature.png" width="50px" class="icon"></div>
-		  <div class="col-xs-7"><h3>Temp : {{items.Temperature}}</h3></div>
+		   <div class="col-xs-7">
+		  	<h3>
+		  		<div style="float:left;">Temp :&nbsp;</div>
+		  		<div style="float:left; color: red" ng-if="items.Temperature >= 29" >{{items.Temperature}}</div>
+		  		<div style="float:left; color: green" ng-if="items.Temperature < 29" >{{items.Temperature}}</div>
+		  	</h3>
+		 	</div>
+		  <!-- <div class="col-xs-7"><h3>Temp : {{items.Temperature}}</h3></div> -->
 	  </div>
 	</div>
 <br>
@@ -312,7 +327,15 @@ var mqttSend = function(topic, msg) {
 		<div class="container">
 			<div class="col-xs-4"></div>
 		  <div class="col-xs-1"><img src="icon/EC.png" width="50px" class="icon"></div>
-		  <div class="col-xs-7"><h3>EC : {{items.EC}}</h3></div>
+		  <div class="col-xs-7">
+		  	<h3>
+		  		<div style="float:left;">EC :&nbsp;</div>
+		  		<div style="float:left; color: red" ng-if="items.EC < 1" >{{items.EC}}</div>
+		  		<div style="float:left; color: red" ng-if="items.EC > 2" >{{items.EC}}</div>
+		  		<div style="float:left; color: green" ng-if="items.EC >= 1 && items.EC <= 2">{{items.EC}}</div>
+		  	</h3>
+		 	</div>
+		  <!-- <div class="col-xs-7"><h3>EC : {{items.EC}}</h3></div> -->
 	  </div>
 	</div>
 <br>
@@ -320,11 +343,82 @@ var mqttSend = function(topic, msg) {
 		<div class="container">
 			<div class="col-xs-4"></div>
 		  <div class="col-xs-1"><img src="icon/pH.png" width="50px" class="icon"></div>
-		  <div class="col-xs-7"><h3>pH : {{items.pH}}</h3></div>
+		  <div class="col-xs-7">
+		  	<h3>
+		  		<div style="float:left;">pH :&nbsp;</div>
+		  		<div style="float:left; color: red" ng-if="items.pH < 6 " >{{items.pH}}</div>
+		  		<div style="float:left; color: red" ng-if="items.pH > 7 " >{{items.pH}}</div>
+		  		<div style="float:left; color: green" ng-if="items.pH >= 6 && items.pH <= 7">{{items.pH}}</div>
+		  	</h3>
+		 	</div>
+		  <!-- <div class="col-xs-7"><h3>pH : {{items.pH}}</h3></div> -->
 	  </div>
 	</div>
 </div>
-
+<hr width="50%">
+<!-- <div class="row">
+	<center>
+		<div class="container">
+			<table>
+				<tr>
+					<td>
+						<div class="col-xs-1"><img src="icon/calendar.png" width="50px"  class="icon"></div>
+					</td>
+					<td>
+						<h3>Date : &nbsp;</h3>
+					</td>
+					<td>
+						<h3>{{items.Date}}</h3>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="col-xs-1"><img src="icon/humidity.png" width="50px" class="icon"></div>
+					</td>
+					<td>
+						<h3>Humidity : &nbsp;</h3>
+					</td>
+					<td>
+						<h3>{{items.Humidity}}</h3>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="col-xs-1"><img src="icon/temperature.png" width="50px" class="icon"></div>
+					</td>
+					<td>
+						<h3>Temp : &nbsp;</h3>
+					</td>
+					<td>
+						<h3>{{items.Temperature}}</h3>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="col-xs-1"><img src="icon/EC.png" width="50px" class="icon"></div>
+					</td>
+					<td>
+						<h3>EC : &nbsp;</h3>
+					</td>
+					<td>
+						<h3>{{items.EC}}</h3>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="col-xs-1"><img src="icon/pH.png" width="50px" class="icon"></div>
+					</td>
+					<td>
+						<h3>pH : &nbsp;</h3>
+					</td>
+					<td>
+						<h3>{{items.pH}}</h3>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</center>
+</div> -->
 
 <!-- body////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 </body>
