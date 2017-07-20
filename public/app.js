@@ -296,7 +296,7 @@ angular.module('app', [])
 		 	var index =  $scope.hole.findIndex(i => i.hole === hole)
 		 	$scope.hole[index].status = true
 		 	$scope.hole[index].end =  moment().add(36, 'days').calendar()
-		 //	$http.post('/dateend', $scope.hole[index]).then(function (response){})
+		 	$http.post('/dateend', $scope.hole[index]).then(function (response){})
 
 		 	if ($scope.totalHole[index].status === false) {
 		 		console.log('first')
