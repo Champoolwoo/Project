@@ -100,7 +100,7 @@ setInterval(function(){
 },1000)
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////time auto
-	$scope.autotime = function(){
+	/*$scope.autotime = function(){
 			var d = new Date()
 			$scope.time1 = d.toLocaleTimeString()
 			// console.log($scope.time1)
@@ -149,7 +149,7 @@ setInterval(function(){
 			 	})
 				console.log("ledOff")
 			}
-	}//Auto time
+	}//Auto time*/
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////time auto
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////time
@@ -288,7 +288,55 @@ setInterval(function(){
 setInterval(function(){
 		if($scope.stasystem == "Auto"){
 			console.log("auto")
-			$scope.autotime()
+			// $scope.autotime()
+			var d = new Date()
+			$scope.time1 = d.toLocaleTimeString()
+			// console.log($scope.time1)
+
+			if($scope.time1 > '18:00:00' || $scope.time1 < '06:00:00'){
+				$scope.LEDSta = 'ON'
+				$http.get('/ledOn').then(function (response){
+					// console.log(response)
+				})
+				// if($scope.staLED === false){
+				// 	$scope.LEDSta = 'OFF'
+				// 	$http.get('/ledOff').then(function (response){
+				// 		// console.log(response)
+				// 	})
+				// }
+				// if($scope.staLED === true){
+				// 	$scope.LEDSta = 'ON'
+				// 	$http.get('/ledOn').then(function (response){
+				// 		// console.log(response)
+				// 	})
+				// }
+				$scope.stabtn[0].statusbtn = true
+				$http.put('/btn/' + $scope.totalbtn[0]._id, $scope.stabtn[0]).then(res => {
+			 		$scope.totalbtn[0].statusbtn =  res.data.statusbtn
+			 	})
+				console.log("ledOn")
+
+			}else if($scope.time1 >= '06:00:00 '|| $scope.time1 <= '18:00:00'){
+				$scope.LEDSta = 'OFF'
+				$http.get('/ledOff').then(function (response){
+					// console.log(response)
+				})
+				// if($scope.staLED === false){
+				// 	$http.get('/ledOff').then(function (response){
+				// 		// console.log(response)
+				// 	})
+				// }
+				// if($scope.staLED === true){
+				// 	$http.get('/ledOn').then(function (response){
+				// 		// console.log(response)
+				// 	})
+				// }
+				$scope.stabtn[0].statusbtn = false
+				$http.put('/btn/' + $scope.totalbtn[0]._id, $scope.stabtn[0]).then(res => {
+			 		$scope.totalbtn[0].statusbtn =  res.data.statusbtn
+			 	})
+				console.log("ledOff")
+			}
 		}else if($scope.stasystem == "Manual"){
 			console.log("Manual")
 			if($scope.staLED == true){
