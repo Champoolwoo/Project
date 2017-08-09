@@ -107,9 +107,9 @@ setInterval(function(){
 
 			if($scope.time1 > '18:00:00' || $scope.time1 < '06:00:00'){
 				$scope.LEDSta = 'ON'
-//				$http.get('/ledOn').then(function (response){
+				$http.get('/ledOn').then(function (response){
 					// console.log(response)
-//				})
+				})
 				// if($scope.staLED === false){
 				// 	$scope.LEDSta = 'OFF'
 				// 	$http.get('/ledOff').then(function (response){
@@ -130,9 +130,9 @@ setInterval(function(){
 
 			}else if($scope.time1 >= '06:00:00 '|| $scope.time1 <= '18:00:00'){
 				$scope.LEDSta = 'OFF'
-//				$http.get('/ledOff').then(function (response){
+				$http.get('/ledOff').then(function (response){
 					// console.log(response)
-//				})
+				})
 				// if($scope.staLED === false){
 				// 	$http.get('/ledOff').then(function (response){
 				// 		// console.log(response)
@@ -160,9 +160,9 @@ setInterval(function(){
 
 			if($scope.staLED === true){
 				$scope.LEDSta = 'ON'
-//				$http.get('/ledOn').then(function (response){
+				$http.get('/ledOn').then(function (response){
 				// console.log(response)
-//				})
+				})
 				console.log("ledOn")
 				$scope.stabtn[0].statusbtn = true
 				$http.put('/btn/' + $scope.totalbtn[0]._id, $scope.stabtn[0]).then(res => {
@@ -170,9 +170,9 @@ setInterval(function(){
 			 	})
 			}else if($scope.staLED === false){
 				$scope.LEDSta = 'ON'
-//				$http.get('/ledOff').then(function (response){
+				$http.get('/ledOff').then(function (response){
 				// console.log(response)
-//				})
+				})
 				console.log("ledOff")
 				$scope.stabtn[0].statusbtn = false
 				$http.put('/btn/' + $scope.totalbtn[0]._id, $scope.stabtn[0]).then(res => {
@@ -182,9 +182,9 @@ setInterval(function(){
 
 			if($scope.staPump === true){
 				$scope.pumpSta = 'ON'
-//				$http.get('/pumpOn').then(function (response){
+				$http.get('/pumpOn').then(function (response){
 				// console.log(response)
-//				})
+				})
 				$scope.stabtn[1].statusbtn = true///////////////////////////////
 				console.log("pumpOn")
 				$http.put('/btn/' + $scope.totalbtn[1]._id, $scope.stabtn[1]).then(res => {
@@ -193,9 +193,9 @@ setInterval(function(){
 
 			}else if($scope.staPump === false){
 				$scope.pumpSta = 'OFF'
-//				$http.get('/pumpOff').then(function (response){
+				$http.get('/pumpOff').then(function (response){
 				// console.log(response)
-//				})
+				})
 				$scope.stabtn[1].statusbtn = false///////////////////////////////
 				console.log("pumpOn")
 				$http.put('/btn/' + $scope.totalbtn[1]._id, $scope.stabtn[1]).then(res => {
@@ -211,9 +211,9 @@ setInterval(function(){
 
 		$scope.ledOn = function(){
 			$scope.LEDSta = 'ON'
-//			$http.get('/ledOn').then(function (response){
+			$http.get('/ledOn').then(function (response){
 				// console.log(response)
-//			})
+			})
 			$scope.stabtn[0].statusbtn = true///////////////////////////////
 			// $http.post('/btn', $scope.stabtn[0]).then(function (response){})///////////////////////////////
 			console.log("ledOn")
@@ -225,9 +225,9 @@ setInterval(function(){
 
 		$scope.ledOff = function(){
 			$scope.LEDSta = 'OFF'
-//			$http.get('/ledOff').then(function (response){
+			$http.get('/ledOff').then(function (response){
 				// console.log(response)
-//			})
+			})
 			$scope.stabtn[0].statusbtn = false///////////////////////////////
 			// $http.post('/btn', $scope.stabtn[0]).then(function (response){})///////////////////////////////
 			console.log("ledOff")
@@ -242,9 +242,9 @@ setInterval(function(){
 
 		$scope.pumpOn = function(){
 			$scope.pumpSta = 'ON'
-//			$http.get('/pumpOn').then(function (response){
+			$http.get('/pumpOn').then(function (response){
 				// console.log(response)
-//			})
+			})
 			$scope.stabtn[1].statusbtn = true///////////////////////////////
 			// $http.post('/btn', $scope.stabtn[1]).then(function (response){})///////////////////////////////
 			console.log("pumpOn")
@@ -255,9 +255,9 @@ setInterval(function(){
 
 		$scope.pumpOff = function(){
 			$scope.pumpSta = 'OFF'
-//			$http.get('/pumpOff').then(function (response){
+			$http.get('/pumpOff').then(function (response){
 				// console.log(response)
-//			})
+			})
 			$scope.stabtn[1].statusbtn = false///////////////////////////////
 			// $http.post('/btn', $scope.stabtn[1]).then(function (response){})///////////////////////////////
 			console.log("pumpOff")
@@ -279,7 +279,7 @@ setInterval(function(){
 		$scope.first = function(){
 			$http.post('/btn', $scope.stabtn[1]).then(function (response){})
 			$http.post('/btn', $scope.stabtn[0]).then(function (response){})
-			// $http.post('/setsys', $scope.sys[0]).then(function (response){})
+			$http.post('/setsys', $scope.sys[0]).then(function (response){})
 		}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////control
