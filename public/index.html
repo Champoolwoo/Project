@@ -214,6 +214,7 @@ var mqttSend = function(topic, msg) {
 	<!-- </center> -->
 
 		<center>
+		<button class="btn btn-danger btn-lg active" ng-click="first()">first</button>
 		<h1>Smart Farm Vegetable</h1>
 	  <p>Control LED Grow Light And Control Water pump</p>
 	  </center>
@@ -223,6 +224,11 @@ var mqttSend = function(topic, msg) {
 			<div class="col-md-4"></div>
 			<div class="col-md-4" id="div1">
 			<center>
+			Setting LED Grow Light system<br>
+			Status : {{stasystem}}<br>
+			<button class="btn btn-danger btn-xs active" ng-click="auto()" ng-if="stasystem === 'Manual'">Auto</button>
+			<button class="btn btn-success btn-xs active" ng-click="man()" ng-if="stasystem === 'Auto'">Manually</button>
+
 			<h3>Control LED Status : {{LEDSta}} </h3>
 			<!-- <p class="bg-info">Status : {{LEDSta}} </p> -->
 
@@ -231,8 +237,9 @@ var mqttSend = function(topic, msg) {
 			  <button id="led-off" disabled>&nbsp;ON LED&nbsp;</button>
 			<h2>Status LED : <span id="stled"></span></h2> -->
 
-			 <button id="led-on" class="btn btn-danger btn-lg active" ng-click="ledOff()">Off</button>
-			 <button id="led-off" class="btn btn-success btn-lg active" ng-click="ledOn()">On</button>
+			 <button id="led-on" class="btn btn-danger btn-lg active" ng-click="ledOff()" ng-if="stasystem === 'Manual'">Off</button>
+			 <button id="led-off" class="btn btn-success btn-lg active" ng-click="ledOn()" ng-if="stasystem === 'Manual'">On</button>
+
 
 				<!-- <div class="holder">
 					<input type="checkbox" value="true" id="check" name="check" ng-click="controlSwitch()" class="check-ios" ng-model="conLED"/>

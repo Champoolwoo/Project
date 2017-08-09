@@ -15,6 +15,10 @@ var Schema3 = mongoose.Schema
 var thingSchema3 = new Schema3({}, {strict: false})
 var evenhole = mongoose.model('typehole', thingSchema3)
 
+var Schema4 = mongoose.Schema
+var thingSchema4 = new Schema4({}, {strict: false})
+var evensys = mongoose.model('btnsys', thingSchema4)
+
 var app = express()
 
 mongoose.connect('mongodb://localhost:27017/farm')
@@ -147,6 +151,38 @@ app.put('/btn/:id', function (req, res) {
     eventbtn.findOneAndUpdate(
       { _id: req.params.id },
       { $set: {btnnum: req.body.btnnum, statusbtn: req.body.statusbtn} },
+      { new: true })
+      .exec(function (err, done) {
+        if (err) console.log(err)
+        res.send(done)
+      })
+  })
+//////////////////////////////////////////////////////////////////////////////////////btn
+
+//////////////////////////////////////////////////////////////////////////////////////btn
+app.post('/setsys', function(req, res){
+  var objsys = new evensys(req.body)
+  objsys.save(function(err, obj){
+    if(err){
+      return(res.send(err))
+    }else{
+      return(res.send('done'))
+    }
+  })
+})
+
+app.get('/setsys', function (req, res) {
+    evensys.find({})
+    .exec(function (err, done) {
+      if (err) console.log(err)
+      res.send(done)
+    })
+  })
+
+app.put('/setsys/:id', function (req, res) {
+    evensys.findOneAndUpdate(
+      { _id: req.params.id },
+      { $set: {btnsys: req.body.btnsys, sysbtn: req.body.sysbtn, stasys: req.body.stasys } },
       { new: true })
       .exec(function (err, done) {
         if (err) console.log(err)
