@@ -100,7 +100,7 @@ setInterval(function(){
 },1000)
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////time auto
-	/*$scope.autotime = function(){
+	$scope.autotime = function(){
 			var d = new Date()
 			$scope.time1 = d.toLocaleTimeString()
 			// console.log($scope.time1)
@@ -127,7 +127,7 @@ setInterval(function(){
 			 		$scope.totalbtn[0].statusbtn =  res.data.statusbtn
 			 	})
 				console.log("ledOn")
-
+				console.log("---------------------------------OK")
 			}else if($scope.time1 >= '06:00:00 '|| $scope.time1 <= '18:00:00'){
 				$scope.LEDSta = 'OFF'
 				$http.get('/ledOff').then(function (response){
@@ -148,8 +148,9 @@ setInterval(function(){
 			 		$scope.totalbtn[0].statusbtn =  res.data.statusbtn
 			 	})
 				console.log("ledOff")
+				console.log("---------------------------------OK")
 			}
-	}//Auto time*/
+	}//Auto time
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////time auto
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////time
@@ -168,6 +169,7 @@ setInterval(function(){
 				$http.put('/btn/' + $scope.totalbtn[0]._id, $scope.stabtn[0]).then(res => {
 			 		$scope.totalbtn[0].statusbtn =  res.data.statusbtn
 			 	})
+			 	console.log("---------------------------------OK")
 			}else if($scope.staLED === false){
 				$scope.LEDSta = 'ON'
 				$http.get('/ledOff').then(function (response){
@@ -178,6 +180,7 @@ setInterval(function(){
 				$http.put('/btn/' + $scope.totalbtn[0]._id, $scope.stabtn[0]).then(res => {
 			 		$scope.totalbtn[0].statusbtn =  res.data.statusbtn
 			 	})
+			 	console.log("---------------------------------OK")
 			}
 
 			if($scope.staPump === true){
@@ -221,6 +224,7 @@ setInterval(function(){
 		 		$scope.totalbtn[0].statusbtn =  res.data.statusbtn
 		 		console.log(res.data.statusbtn)
 		 	})
+		 	console.log("---------------------------------OK")
 		}
 
 		$scope.ledOff = function(){
@@ -235,6 +239,7 @@ setInterval(function(){
 		 		$scope.totalbtn[0].statusbtn =  res.data.statusbtn
 		 		console.log(res.data.statusbtn)
 		 	})
+		 	console.log("---------------------------------OK")
 		}
 
 
@@ -288,60 +293,12 @@ setInterval(function(){
 setInterval(function(){
 		if($scope.stasystem == "Auto"){
 			console.log("auto")
-			// $scope.autotime()
-			var d = new Date()
-			$scope.time1 = d.toLocaleTimeString()
-			// console.log($scope.time1)
-
-			if($scope.time1 > '18:00:00' || $scope.time1 < '06:00:00'){
-				$scope.LEDSta = 'ON'
-				$http.get('/ledOn').then(function (response){
-					// console.log(response)
-				})
-				// if($scope.staLED === false){
-				// 	$scope.LEDSta = 'OFF'
-				// 	$http.get('/ledOff').then(function (response){
-				// 		// console.log(response)
-				// 	})
-				// }
-				// if($scope.staLED === true){
-				// 	$scope.LEDSta = 'ON'
-				// 	$http.get('/ledOn').then(function (response){
-				// 		// console.log(response)
-				// 	})
-				// }
-				$scope.stabtn[0].statusbtn = true
-				$http.put('/btn/' + $scope.totalbtn[0]._id, $scope.stabtn[0]).then(res => {
-			 		$scope.totalbtn[0].statusbtn =  res.data.statusbtn
-			 	})
-				console.log("ledOn")
-
-			}else if($scope.time1 >= '06:00:00 '|| $scope.time1 <= '18:00:00'){
-				$scope.LEDSta = 'OFF'
-				$http.get('/ledOff').then(function (response){
-					// console.log(response)
-				})
-				// if($scope.staLED === false){
-				// 	$http.get('/ledOff').then(function (response){
-				// 		// console.log(response)
-				// 	})
-				// }
-				// if($scope.staLED === true){
-				// 	$http.get('/ledOn').then(function (response){
-				// 		// console.log(response)
-				// 	})
-				// }
-				$scope.stabtn[0].statusbtn = false
-				$http.put('/btn/' + $scope.totalbtn[0]._id, $scope.stabtn[0]).then(res => {
-			 		$scope.totalbtn[0].statusbtn =  res.data.statusbtn
-			 	})
-				console.log("ledOff")
-			}
+			$scope.autotime()
 		}else if($scope.stasystem == "Manual"){
 			console.log("Manual")
 			if($scope.staLED == true){
 					$scope.LEDSta = 'ON'
-				}else if($scope.staLED == false){
+			}else if($scope.staLED == false){
 					$scope.LEDSta = 'OFF'
 			}
 		}//if man
