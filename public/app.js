@@ -11,7 +11,7 @@ angular.module('app', [])
 //https://sheetsu.com/apis/v1.0/5eac309ffcdc
 //https://sheetsu.com/apis/v1.0/b7e3ea00dedb
 //https://sheetsu.com/apis/v1.0/e36e82f2bcd1
-		$http.get('https://sheetsu.com/apis/v1.0/e36e82f2bcd1').then(function(res){
+		$http.get('https://sheetsu.com/apis/v1.0/5eac309ffcdc').then(function(res){
 			console.log()
 		      $scope.items = res.data[res.data.length - 1]
 		      $scope.sheets = res.data
@@ -108,9 +108,9 @@ setInterval(function(){
 
 			if($scope.time1 > '18:00:00' || $scope.time1 < '06:00:00'){
 				$scope.LEDSta = 'ON'
-				$http.get('/ledOn').then(function (response){
+//				$http.get('/ledOn').then(function (response){
 					// console.log(response)
-				})
+//				})
 				// if($scope.staLED === false){
 				// 	$scope.LEDSta = 'OFF'
 				// 	$http.get('/ledOff').then(function (response){
@@ -131,9 +131,9 @@ setInterval(function(){
 				console.log("---------------------------------OK")
 			}else if($scope.time1 >= '06:00:00 '|| $scope.time1 <= '18:00:00'){
 				$scope.LEDSta = 'OFF'
-				$http.get('/ledOff').then(function (response){
+//				$http.get('/ledOff').then(function (response){
 					// console.log(response)
-				})
+//				})
 				// if($scope.staLED === false){
 				// 	$http.get('/ledOff').then(function (response){
 				// 		// console.log(response)
